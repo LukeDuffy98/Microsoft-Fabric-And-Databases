@@ -1,0 +1,47 @@
+{
+  "labId": "fabric-foundry-lab",
+  "title": "Fabric + Foundry Lab",
+  "delivery": "LabDesktops",
+  "repoBranch": "main",
+  "studentReadmePath": "labs/fabric-foundry-lab/README.md",
+  "instructionsTitle": "Fabric + Foundry Lab Guide",
+  "durationMinutes": 180,
+  "audience": "Participants from multiple companies",
+  "flow": [
+    {
+      "id": "preflight",
+      "title": "Access and login check",
+      "required": true
+    },
+    {
+      "id": "readiness",
+      "title": "Environment readiness validation",
+      "required": true
+    },
+    {
+      "id": "foundry",
+      "title": "Build and test an AI agent",
+      "required": true
+    },
+    {
+      "id": "fabric",
+      "title": "Connect and query Fabric data",
+      "required": true
+    },
+    {
+      "id": "wrap-up",
+      "title": "Review outcomes and next steps",
+      "required": true
+    }
+  ],
+  "sharedResources": [
+    "Azure AI Foundry hub or project host",
+    "Shared model deployment",
+    "Fabric workspace and data",
+    "Any quota-sensitive or expensive Azure resources"
+  ],
+  "perStudentResources": [
+    "Student resource group",
+    "Optional lightweight storage account or other isolated resources defined in Bicep"
+  ]
+}

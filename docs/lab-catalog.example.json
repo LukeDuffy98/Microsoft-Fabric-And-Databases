@@ -1,0 +1,10 @@
+{
+  "fabric-foundry-lab": {
+    "repoUrl": "https://github.com/<owner>/<repo>",
+    "repoBranch": "main",
+    "readmePath": "labs/fabric-foundry-lab/README.md",
+    "instructionsTitle": "Fabric + Foundry Lab Guide",
+    "instructionsGuardrails": "Stay within the provided subscription, workspace, and prepared assets for this session.",
+    "studentRgTemplateSpecVersionId": "/subscriptions/<subId>/resourceGroups/rg-lab-infra/providers/Microsoft.Resources/templateSpecs/fabric-foundry-lab-student-resources/versions/v1"
+  }
+}
