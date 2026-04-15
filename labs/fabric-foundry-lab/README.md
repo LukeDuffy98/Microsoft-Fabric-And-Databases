@@ -142,13 +142,13 @@ The workshop environment should already provide access to:
 
 ### Step 1 — Confirm You Are Still Using The Lab Account
 
-1. In a browser tab, open:
+1. If you are not at the Azure portal, in a browser tab, open:
 
    ```text
    https://portal.azure.com
    ```
 
-2. Confirm the account in the top-right corner is still your lab account.
+2. Confirm the account in the top-right corner is still your lab account. ![Check User](image-3.png)
 
 > **Success criteria:** The displayed identity matches the lab credentials used in Lab 0.
 
@@ -159,22 +159,25 @@ The workshop environment should already provide access to:
    ```text
    https://ai.azure.com
    ```
+![Foundry Page](image-4.png)
 
-2. If prompted to sign in, use the same lab account.
+2. If prompted to sign in, use the same lab account. ![Resource List](image-5.png)
 3. Open the project list or all-projects view.
-4. Find your assigned project.
+4. Find your assigned project. ![Choose Project](image-6.png)
+   The project name will be a reflection of lab username, the 3 digit number in your account will match the oproject name prefix of proj-seatNNN
 
 > **Naming note:** In many workshops, your project name includes your username or student number. Use the exact project name shown in the event instructions.
 
-5. Open the project.
+5. Open the project by clicking on its name.
+![Project Screen](image-7.png)
 
 > **Success criteria:** You can enter the project and see navigation items such as **Agents**, **Playgrounds**, **Models + endpoints**, and **Files**.
 
 ### Step 3 — Confirm The Model Deployment Exists
 
-1. Inside the project, open **Models + endpoints**.
-2. Confirm at least one model deployment is available.
-3. If the workshop provides a specific deployment name, confirm that exact deployment exists.
+1. Inside the project, open **Models + endpoints**. ![Models and Endpionts](image-8.png)
+2. Confirm at least one model deployment is available. ![List of models](image-9.png)
+
 
 > **Success criteria:** You can see at least one deployment in a healthy state such as **Succeeded**, **Ready**, or equivalent.
 
@@ -185,10 +188,16 @@ The workshop environment should already provide access to:
    ```text
    https://app.fabric.microsoft.com
    ```
+![Fabric Page First Login](image-10.png)
 
-2. If prompted, sign in with the same lab account.
-3. Open **Workspaces**.
-4. Locate the workspace assigned for the event.
+2. If prompted, sign in with the same lab account, click "Submit". ![Fabric Page with Username](image-11.png)
+3. If you see thi smessage ![Fabric Sign Up Page](image-12.png) do not proceed through teh steps. Instead navigate to   
+    ```text
+   https://app.fabric.microsoft.com
+   ``` 
+   again in the same browser session and you should land in the home page.   ![Fabric Home Page](image-13.png)
+4. Open **Workspaces**.
+5. Locate the workspace assigned for the event.
 
 > **Success criteria:** You can enter the workspace and see the prepared items.
 
