@@ -778,6 +778,10 @@ Try this prompt first:
 ```text
 What types of information are available in this workshop dataset?
 ```
+![Question 1](image-48.png)
+
+
+> **Note** the table names, categories, or values mentioned in the answer. This indicates the agent is using the data rather than just general knowledge.
 
 ### Step 8 — Ask A Scenario Question
 
@@ -796,36 +800,66 @@ Summarize the kinds of procurement and clinical outcome questions this dataset c
 
 > **What success looks like:** You receive at least one useful answer that clearly comes from the workshop data experience.
 
-> **Screenshot to add later:** Successful data-backed query result in Fabric.
+> **Note** You can also add custom instructions, data source instructions and example queries. Play around with the experience if you have time, but be sure to at least get a clear data-backed answer before moving on.
+
+![Agent IUnstructions](image-51.png)
+
+![Datasource Instructions](image-50.png)
+
+![Example Queries](image-49.png)
+
+### Step 9 — Publish your Data Agent
+
+1. Choose the publish option from the ribbon
+![Publish](image-52.png)
+
+
+2. Then select publish. Do not change any settings 
+![Publish Options](image-53.png)
+
+3. After publishing choose the settings gear on the ribbon.
+![Settings Icon](image-54.png)
+
+4. Copy the **Published URL** and save it for the next section.
+![Published URL](image-55.png)
+
+You will need to copy the workspace value (Between workspace/ and /agent in the URL) and the agent value (after /agent/) to connect this data agent to your Foundry agent in the next section.
+
+
+
 
 ## Part 3 — Add The Fabric Capability To Your Foundry Agent
 
-### Step 9 — Return To Azure AI Foundry
+### Step 10 — Return To Azure AI Foundry
 
 1. Go back to the browser tab where your Foundry project is open.
 2. Open **Agents**.
 3. Select the agent you created in Lab 2.
 
-### Step 10 — Open The Tools Section
+### Step 11 — Open The Knowledge Section
 
-1. In the agent configuration, find the area for **Tools**, **Functions**, or **Integrations**.
-2. Choose the option to add a new tool or external capability.
+1. In the knowledge section, choose to add a new knowledge source.
+2. Choose **Microsoft Fabric**
+![Knowledge Sources](image-56.png)
 
-> **What success looks like:** You can see the workflow for attaching an additional capability to the agent.
+3. Choose the option to **create connection**.
+![Create Connection](image-57.png)
 
-### Step 11 — Add The Workshop Fabric Capability
+4. Set the workspace-id and artifact-id using the values in the published URL from the previous section. The workspace-id is the value between workspace/ and /agent in the URL, and the artifact-id is the value after /agent/ in the URL.
+![Connection Settings](image-58.png)
 
-1. Select the Fabric-backed tool or connection method used in your workshop.
-2. Choose the shared Fabric data capability specified by the facilitator.
-3. If a function or tool name is generated, note it.
-4. Save the agent.
+5. Set the connection name to something recognizable such as `FabLabDataAgent-NNN Connection`.
 
-> **What success looks like:** The agent now lists a Fabric-backed capability in its tools section.
+6. Then choose **Connect**
 
-### Step 12 — Update The Instructions So The Agent Uses The Tool
+
+
+
+
+### Step 11 — Update The Instructions So The Agent Uses The Tool
 
 1. Return to the **Instructions** field.
-2. Add the text below at the end of your existing instructions.
+2. Add the text below at the end of your existing instructions. **Keep the original instructions, we are appending new guidance.**
 3. Save the agent again.
 
 Suggested addition:
@@ -837,23 +871,26 @@ Do not estimate values when the tool can retrieve them.
 If the tool does not return enough information, say that clearly.
 ```
 
+![Updated Instructions](image-59.png)
+
 > **Why this step matters:** Adding a tool is not enough on its own. The instructions help the agent know when it should use the tool.
 
 ## Part 4 — Test The Data-Enhanced Agent
 
-### Step 13 — Ask A Live Data Question
+### Step 12 — Ask A Live Data Question
 
-1. Open the agent test panel.
-2. Ask a question that should require live structured data.
-3. Read the answer carefully.
+
+1. Ask a question that should require live structured data.
+2. Read the answer carefully.
 
 Try this prompt first:
 
 ```text
 Using the available Fabric data, summarize the main types of healthcare information this assistant can now answer questions about.
 ```
+> **Note** the file source is used to return data-backed answers rather than just general knowledge or Fabric Data.
 
-### Step 14 — Ask A More Specific Question
+### Step 13 — Ask A More Specific Question
 
 1. Ask a second question that should force the agent to use the Fabric capability.
 2. Look for evidence that the answer is more concrete than the grounded-only answers from Lab 2.
@@ -861,29 +898,22 @@ Using the available Fabric data, summarize the main types of healthcare informat
 Try one of these prompts:
 
 ```text
-Use the live workshop data to explain how medical devices, procurement orders, and clinical outcomes relate to each other.
+Use the live data to explain how medical devices, procurement orders, and clinical outcomes relate to each other.
 ```
 
+> **Note** the Fabric source is used to return data-backed answers.
+
 ```text
-Based on the current workshop data, what kinds of hospital operations insights could this assistant support?
+Based on the current data, what kinds of hospital operations insights could this assistant support?
 ```
 
 > **What success looks like:** The response is more specific and sounds clearly tied to structured data rather than only general instructions.
 
-### Step 15 — Compare Grounded Answers With Live Data Answers
 
-1. Review one answer from Lab 2.
-2. Review one answer from Lab 3.
-3. Write down one difference between them.
-
-Examples:
-
-1. The Lab 2 answer explained concepts, but the Lab 3 answer described actual available data.
-2. The Lab 3 answer used more specific entities and categories.
 
 ## Part 5 — Optional Extension Work
 
-### Step 16 — Optional: Ask A Deeper Analytical Question
+### Step 14 — Optional: Ask A Deeper Analytical Question
 
 If time allows, try a prompt that combines reasoning with data access.
 
@@ -897,13 +927,13 @@ Based on the available workshop data, what is one operational insight a hospital
 Use the live data to describe one relationship between device usage, procurement, or outcomes that could matter to decision-makers.
 ```
 
-### Step 17 — Optional: Revisit The Fabric Workspace
+### Step 15 — Optional: Revisit The Fabric Workspace
 
 1. Return to Fabric.
 2. Open another table, entity, or report.
 3. Note one additional question that would be useful in a real healthcare operations workflow.
 
-### Step 18 — Optional: Note One Production Gap
+### Step 16 — Optional: Note One Production Gap
 
 Write down one thing that would need improvement before this assistant could be used in a real production setting.
 
