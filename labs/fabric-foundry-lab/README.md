@@ -347,23 +347,25 @@ What should an enterprise assistant do when it does not have enough information 
 
 ### Step 6 — Open The Agents Area
 
-1. Return to the main project navigation.
+1. Return to the main project navigation. ![Agent Navigation](image-25.png)
 2. Click **Agents**.
-3. Select **New agent** or the equivalent create button.
-
+3. Select the Azure OpenAI resource, and **Let's Go** ![Choose Resource](image-26.png)
+4. Choose the Model Deployment **gpt-4o** ![Choose Model](image-27.png)
+5. A **New agent** will be created for you. 
+   
 > **What success looks like:** The agent creation form opens.
 
 > **Screenshot to add later:** New agent form with key fields highlighted.
 
 ### Step 7 — Enter The Agent Name
 
-1. In the **Name** field, enter a clear name for your agent.
-2. Use a name that reflects the healthcare scenario.
+1. In the **Name** field, enter a clear name for your agent. You cannot change the ID, but you can change the name. 
+2. Set the name to something you will remember. ![Set Name](image-28.png)
 
 Example:
 
 ```text
-Healthcare Operations Copilot
+FabLabAgent-seatNNN
 ```
 
 > **Why this matters:** A clear name makes it easier to find the agent again when several students are working in the same workshop format.
@@ -392,28 +394,22 @@ Be clear, concise, and professional.
 If you do not have enough information, say so clearly.
 Do not invent facts, metrics, policies, or recommendations.
 ```
+![Add Instructions](image-29.png)
 
 > **What these instructions do:** They define the role, scope, tone, and limits of the agent.
 
-### Step 10 — Save The Agent
-
-1. Review the required fields one more time.
-2. Confirm that **Name**, **Model deployment**, and **Instructions** are populated.
-3. Click **Save**.
-4. Wait for the save to finish before clicking away.
-
-> **What success looks like:** The agent remains open after save, or appears in the agent list with the name you entered.
+> **Note:** The agent will save automatically.
 
 ## Part 4 — Test The Ungrounded Agent
 
-### Step 11 — Open The Agent Test Panel
+### Step 11 — Open  "Try In Playground""
 
-1. Open the test panel, chat panel, or playground for the agent you just saved.
-2. Confirm you are testing the saved agent, not the base model playground from earlier.
+1. Open the test panel, chat panel, or playground for the agent you just saved. ![Open Test Playground](image-30.png)
+2. Confirm you are testing the saved agent, not the **chat** playground from earlier. ![Agents Playground](image-31.png)
 
 ### Step 12 — Ask Two Scenario Questions
 
-1. Ask the first question below.
+1. Ask the first question below. ![Ask Question](image-32.png)
 2. Read the answer and decide whether it feels specific or still fairly generic.
 3. Ask the second question below.
 4. Compare the two responses.
@@ -446,13 +442,9 @@ Examples:
 
 ## Part 5 — Upload The Workshop Knowledge File
 
-### Step 14 — Open The Files Area
 
-1. Return to the main project navigation.
-2. Click **Files**.
-3. Wait for the file list to load.
 
-### Step 15 — Upload The Knowledge File
+### Step 14 — Upload The Knowledge File
 
 1. Click **Upload file** or the equivalent add action.
 2. Select the workshop knowledge file provided for the event.
