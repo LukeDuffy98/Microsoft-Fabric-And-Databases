@@ -87,19 +87,27 @@ This short setup lab makes sure you are signed in correctly before the main hand
 
 ### Step 3 — Sign In With Your Lab Account
 
-1. Enter the lab username shown in the LabDesktops banner. ![Microsoft sign-in page with the username field for the lab account](image.png)
+1. Enter the lab username shown in the LabDesktops banner.
+
+   <img src="image.png" alt="Microsoft sign-in page with the username field for the lab account" width="500" />
 2. Continue through the sign-in flow.
-3. Enter the password or temporary access pass if your session requires one. ![Temporary Access Pass screen for the lab account sign-in flow](image-1.png)
+3. Enter the password or temporary access pass if your session requires one.
+
+   <img src="image-1.png" alt="Temporary Access Pass screen for the lab account sign-in flow" width="500" />
 
 ### Step 4 — Handle Any Sign-In Prompts
 
-1. If asked whether to stay signed in, choose the option to stay signed in. ![Microsoft prompt asking whether to stay signed in](image-2.png)
+1. If asked whether to stay signed in, choose the option to stay signed in.
+
+   <img src="image-2.png" alt="Microsoft prompt asking whether to stay signed in" width="500" />
 2. If prompted for additional verification, complete it using the lab instructions you were given.
 3. If the flow redirects unexpectedly to a personal or company tenant, stop and ask for help. This usually means you are not in an InPrivate or Incognito session, or the lab credentials were not used.
 
 ### Step 5 — Confirm You Landed In The Correct Environment
 
-1. Once the portal loads, check the top-right account indicator. ![Azure portal showing the signed-in lab account in the top-right corner](image-3.png)
+1. Once the portal loads, check the top-right account indicator.
+
+   <img src="image-3.png" alt="Azure portal showing the signed-in lab account in the top-right corner" width="500" />
 2. Confirm the displayed account is your lab user.
 3. Stay in this same browser session for the rest of the workshop.
 
@@ -148,7 +156,9 @@ The workshop environment should already provide access to:
    https://portal.azure.com
    ```
 
-2. Confirm the account in the top-right corner is still your lab account. ![Azure portal showing the signed-in lab account in the top-right corner](image-3.png)
+2. Confirm the account in the top-right corner is still your lab account.
+
+   <img src="image-3.png" alt="Azure portal showing the signed-in lab account in the top-right corner" width="500" />
 
 > **Success criteria:** The displayed identity matches the lab credentials used in Lab 0.
 
@@ -160,25 +170,33 @@ The workshop environment should already provide access to:
    https://ai.azure.com
    ```
 
-   ![Microsoft Foundry landing page after opening ai.azure.com](image-4.png)
+   <img src="image-4.png" alt="Microsoft Foundry landing page after opening ai.azure.com" width="500" />
 
-2. If prompted to sign in, use the same lab account. ![Microsoft Foundry project selection or resource list view](image-5.png)
+2. If prompted to sign in, use the same lab account.
+
+   <img src="image-5.png" alt="Microsoft Foundry project selection or resource list view" width="500" />
 3. Open the project list or all-projects view.
-4. Find your assigned project. ![Project selection screen showing the assigned student project](image-6.png)
+4. Find your assigned project.
+
+   <img src="image-6.png" alt="Project selection screen showing the assigned student project" width="500" />
    The project name should align with your lab username. In most cases, the three-digit number in your account matches the `NNN` portion of a name such as `proj-seatNNN`.
 
 > **Naming note:** In many workshops, your project name includes your username or student number. Use the exact project name shown in the event instructions.
 
 5. Open the project by clicking its name.
 
-   ![Microsoft Foundry project home page after opening the assigned project](image-7.png)
+   <img src="image-7.png" alt="Microsoft Foundry project home page after opening the assigned project" width="500" />
 
 > **Success criteria:** You can enter the project and see navigation items such as **Agents**, **Playgrounds**, **Models + endpoints**, and **Files**.
 
 ### Step 3 — Confirm The Model Deployment Exists
 
-1. Inside the project, open **Models + endpoints**. ![Foundry navigation showing the Models plus endpoints section](image-8.png)
-2. Confirm at least one model deployment is available. ![List of available model deployments in Foundry](image-9.png)
+1. Inside the project, open **Models + endpoints**.
+
+   <img src="image-8.png" alt="Foundry navigation showing the Models plus endpoints section" width="500" />
+2. Confirm at least one model deployment is available.
+
+   <img src="image-9.png" alt="List of available model deployments in Foundry" width="500" />
 
 
 > **Success criteria:** You can see at least one deployment in a healthy state such as **Succeeded**, **Ready**, or equivalent.
@@ -191,28 +209,42 @@ The workshop environment should already provide access to:
    https://app.fabric.microsoft.com
    ```
 
-   ![Microsoft Fabric sign-in or first-load page](image-10.png)
+   <img src="image-10.png" alt="Microsoft Fabric sign-in or first-load page" width="500" />
 
-2. If prompted, sign in with the same lab account and click **Submit**. ![Microsoft Fabric sign-in page showing the lab username](image-11.png)
-3. If you see this message, do not continue with the sign-up flow. ![Microsoft Fabric sign-up or welcome screen that should be skipped](image-12.png)
+2. If prompted, sign in with the same lab account and click **Submit**.
+
+   <img src="image-11.png" alt="Microsoft Fabric sign-in page showing the lab username" width="500" />
+3. If you see this message, do not continue with the sign-up flow.
+
+   <img src="image-12.png" alt="Microsoft Fabric sign-up or welcome screen that should be skipped" width="500" />
    Instead, navigate to:
 
     ```text
    https://app.fabric.microsoft.com
    ``` 
-   again in the same browser session. You should then land on the Fabric home page. ![Microsoft Fabric home page after successful sign-in](image-13.png)
-4. You may choose cancel to skip the tour.
-5. Open **Workspaces**. ![Microsoft Fabric navigation with Workspaces highlighted](image-14.png)
-6. Locate the workspace assigned for the event. ![Workspace list showing the assigned workshop workspace](image-15.png)
+   again in the same browser session. You should then land on the Fabric home page.
 
-   ![Inside the assigned Microsoft Fabric workspace with prepared items visible](image-16.png)
+   <img src="image-13.png" alt="Microsoft Fabric home page after successful sign-in" width="500" />
+4. You may choose cancel to skip the tour.
+5. Open **Workspaces**.
+
+   <img src="image-14.png" alt="Microsoft Fabric navigation with Workspaces highlighted" width="500" />
+6. Locate the workspace assigned for the event.
+
+   <img src="image-15.png" alt="Workspace list showing the assigned workshop workspace" width="500" />
+
+   <img src="image-16.png" alt="Inside the assigned Microsoft Fabric workspace with prepared items visible" width="500" />
 
 > **Success criteria:** You can enter the workspace and see the prepared items.
 
 ### Step 5 — Confirm The Data Asset Is Visible
 
-1. Open the workshop Lakehouse. ![Lakehouse to select](image-17.png)
-2. Confirm you can see the expected tables, views, or entities. ![Expected Tables](image-18.png)
+1. Open the workshop Lakehouse.
+
+   <img src="image-17.png" alt="Workshop Fabric workspace showing the Lakehouse item to open" width="500" />
+2. Confirm you can see the expected tables, views, or entities.
+
+   <img src="image-18.png" alt="Lakehouse view showing the expected workshop tables" width="500" />
 3. Preview at least one table or item.
 
 > **Success criteria:** You can browse the data structure. Read access is enough for this step.
@@ -282,14 +314,20 @@ By the end of this lab, you should have:
 ### Step 2 — Open Your Assigned Project
 
 
-If you see this project page you are already there and you can jump to the next step:  ![Foundry Start Page](image-19.png)
+If you already see the project page shown below, you are in the correct place and can continue to the next step.
 
-If you see this screen ![Top Level Foundry Page](image-20.png)
+<img src="image-19.png" alt="Microsoft Foundry project home page for the assigned lab project" width="500" />
+
+If you see the top-level Foundry resource list instead, use it to locate your assigned project.
+
+<img src="image-20.png" alt="Top-level Microsoft Foundry page listing available projects or resources" width="500" />
 
 
 1. Find the project assigned to you for the lab in the list of resources, it will contain the 3 digits like your user account.
 2. Open the project.
 3. Pause for a moment and review the left navigation.
+
+The project name should include the same three-digit identifier as your lab account.
 
 You should be able to find areas such as:
 
@@ -298,7 +336,7 @@ You should be able to find areas such as:
 3. **Files**
 4. **Playgrounds**
 
- ![Foundry Start Page](image-19.png)
+ <img src="image-19.png" alt="Microsoft Foundry project home page showing Agents, Models plus endpoints, Files, and Playgrounds" width="500" />
 
 
 > **What success looks like:** You are inside your project and can move around the main sections.
@@ -318,14 +356,22 @@ You should be able to find areas such as:
 
 ### Step 4 — Open A Chat Playground
 
-1. Open the chat playground area in Foundry. ![Overview Navigation](image-21.png)
-2. Choose **Chat Playground** ![Chat Playground](image-22.png)
-2. Choose the workshop model deployment. ![Choose gpt-4o](image-23.png)
-3. Wait until the test surface is ready for input.
+1. Open the chat playground area in Foundry.
+
+   <img src="image-21.png" alt="Foundry project navigation showing how to reach the playground area" width="500" />
+2. Choose **Chat Playground**.
+
+   <img src="image-22.png" alt="Chat Playground option in Microsoft Foundry" width="500" />
+3. Choose the workshop model deployment.
+
+   <img src="image-23.png" alt="Model selector showing the gpt-4o deployment" width="500" />
+4. Wait until the test surface is ready for input.
 
 ### Step 5 — Ask A Baseline Question
 
-1. Enter one of the following prompts. ![Enter Prompt](image-24.png)
+1. Enter one of the following prompts.
+
+   <img src="image-24.png" alt="Chat Playground prompt box ready for input" width="500" />
 2. Submit it and read the answer carefully.
 3. Notice that the answer is still general because you have not created or grounded an agent yet.
 
@@ -347,11 +393,17 @@ What should an enterprise assistant do when it does not have enough information 
 
 ### Step 6 — Open The Agents Area
 
-1. Return to the main project navigation. ![Agent Navigation](image-25.png)
+1. Return to the main project navigation.
+
+   <img src="image-25.png" alt="Foundry navigation showing the Agents entry" width="500" />
 2. Click **Agents**.
-3. Select the Azure OpenAI resource, and **Let's Go** ![Choose Resource](image-26.png)
-4. Choose the Model Deployment **gpt-4o** ![Choose Model](image-27.png)
-5. A **New agent** will be created for you. 
+3. Select the Azure OpenAI resource, then choose **Let's go**.
+
+   <img src="image-26.png" alt="Agent setup screen showing the Azure OpenAI resource selection" width="500" />
+4. Choose the model deployment **gpt-4o**.
+
+   <img src="image-27.png" alt="Agent setup screen showing the gpt-4o model deployment selection" width="500" />
+5. A **New agent** is then created for you.
    
 > **What success looks like:** The agent creation form opens.
 
@@ -359,8 +411,10 @@ What should an enterprise assistant do when it does not have enough information 
 
 ### Step 7 — Enter The Agent Name
 
-1. In the **Name** field, enter a clear name for your agent. You cannot change the ID, but you can change the name. 
-2. Set the name to something you will remember. ![Set Name](image-28.png)
+1. In the **Name** field, enter a clear name for your agent. You cannot change the ID, but you can change the display name.
+2. Set the name to something you will recognize later.
+
+   <img src="image-28.png" alt="Agent configuration screen showing where to edit the agent name" width="500" />
 
 Example:
 
@@ -394,7 +448,8 @@ Be clear, concise, and professional.
 If you do not have enough information, say so clearly.
 Do not invent facts, metrics, policies, or recommendations.
 ```
-![Add Instructions](image-29.png)
+
+<img src="image-29.png" alt="Agent instructions field populated with the workshop starter prompt" width="500" />
 
 > **What these instructions do:** They define the role, scope, tone, and limits of the agent.
 
@@ -404,12 +459,18 @@ Do not invent facts, metrics, policies, or recommendations.
 
 ### Step 11 — Open  "Try In Playground""
 
-1. Open the test panel, chat panel, or playground for the agent you just saved. ![Open Test Playground](image-30.png)
-2. Confirm you are testing the saved agent, not the **chat** playground from earlier. ![Agents Playground](image-31.png)
+1. Open the test panel, chat panel, or playground for the agent you just saved.
+
+   <img src="image-30.png" alt="Agent page showing the Try in playground option" width="500" />
+2. Confirm you are testing the saved agent, not the **Chat Playground** from earlier.
+
+   <img src="image-31.png" alt="Agent playground view for the saved agent" width="500" />
 
 ### Step 12 — Ask Two Scenario Questions
 
-1. Ask the first question below. ![Ask Question](image-32.png)
+1. Ask the first question below.
+
+   <img src="image-32.png" alt="Agent playground prompt box ready for a test question" width="500" />
 2. Read the answer and decide whether it feels specific or still fairly generic.
 3. Ask the second question below.
 4. Compare the two responses.
