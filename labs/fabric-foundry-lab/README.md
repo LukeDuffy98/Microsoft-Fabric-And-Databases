@@ -507,9 +507,21 @@ Examples:
 
 ### Step 14 — Upload The Knowledge File
 
-1. Click **Upload file** or the equivalent add action.
-2. Select the workshop knowledge file provided for the event.
-3. Start the upload.
+1. Select teh **Knowledge Area** and choose **Add**
+![Knowledge Navigation](image-33.png)
+
+2. Choose the **Files** option to upload a document as a knowledge source.
+![Choose Files Option](image-34.png)
+
+3. Click **Select Local Files**. 
+![Select Local Files](image-35.png)
+
+4. Select the workshop knowledge file. You will need to download it from [Sample Knowledge.docx](./assets/Sample%20Knowledge.docx).
+![Uploaded File](image-36.png)
+
+3. Select **Upload and save**.
+![Upload and save Button](image-37.png)
+
 4. Wait for processing to complete.
 
 > **Important:** Use the exact workshop file provided by the facilitator. Do not upload a random document just to move forward.
