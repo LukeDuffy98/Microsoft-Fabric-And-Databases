@@ -196,8 +196,11 @@ The workshop environment should already provide access to:
    https://app.fabric.microsoft.com
    ``` 
    again in the same browser session and you should land in the home page.   ![Fabric Home Page](image-13.png)
-4. Open **Workspaces**.
-5. Locate the workspace assigned for the event.
+4. You may choose cancel to skip the tour.
+5. Open **Workspaces**. ![Workspaces](image-14.png)
+5. Locate the workspace assigned for the event. ![Workspace selection](image-15.png)
+
+![Workspace View](image-16.png)
 
 > **Success criteria:** You can enter the workspace and see the prepared items.
 
