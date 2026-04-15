@@ -1,0 +1,16 @@
+device_id,device_name,category,manufacturer,model_number,unit_price_usd,regulatory_class,description
+D001,ProScan 9000 Ultrasound,Imaging,MedVision,PS-9000,45000,Class II,High-resolution diagnostic ultrasound system with 4D capability
+D002,CardioTrack ECG Monitor,Cardiac Monitoring,HeartTech,CT-200,3200,Class II,12-lead ECG monitor with real-time analysis and wireless connectivity
+D003,PrecisionSurg Robotic Arm,Surgical Robotics,SurgBot,PSR-X1,1200000,Class III,Minimally invasive robotic surgery assist system
+D004,NeoBreath Ventilator,Respiratory,AirCare,NB-500,28000,Class III,Adult and paediatric ICU ventilator with AI-assisted weaning protocol
+D005,VascuCath IV Catheter,Vascular Access,FluidTech,VC-18G,45,Class II,Safety IV catheter with built-in flashback chamber
+D006,OptiScope Endoscope,Endoscopy,VisClear,OS-4K,85000,Class II,4K flexible endoscope with narrow-band imaging
+D007,HemoCheck Blood Analyser,Diagnostics,LabCore,HC-800,62000,Class II,Rapid whole-blood haematology analyser, 5-part differential
+D008,SkinSafe Wound Dressing,Wound Care,BioHeal,SS-200,12,Class I,Advanced hydrocolloid dressing for chronic wound management
+D009,OrthoFix Bone Screw Set,Orthopaedics,BoneWorks,OF-T300,1800,Class III,Titanium cortical and cancellous bone screw system
+D010,NovaPump Infusion Pump,Infusion Therapy,NovaMed,NP-600,8500,Class II,Dual-channel volumetric infusion pump with drug library
+D011,ClearView MRI Coil,Imaging,MedVision,CV-MRI-32,95000,Class II,32-channel head and neck MRI coil for 3T systems
+D012,SmartStent Coronary Stent,Cardiology,HeartTech,SS-DES-3.5,4200,Class III,Drug-eluting coronary stent, 3.5mm diameter
+D013,PulseOx Pro Oximeter,Monitoring,VitalSense,PO-Pro,380,Class II,Clinical-grade pulse oximeter with continuous waveform display
+D014,NanoFilter HEPA Unit,Infection Control,AirPure,NF-H14,12000,Class I,Mobile HEPA H14 air filtration for isolation rooms
+D015,FlexScope Bronchoscope,Pulmonology,VisClear,FS-7.2,74000,Class II,Single-use flexible bronchoscope, 7.2mm insertion tube

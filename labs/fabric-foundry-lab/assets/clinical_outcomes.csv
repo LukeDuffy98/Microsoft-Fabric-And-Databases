@@ -1,0 +1,16 @@
+outcome_id,device_category,hospital_name,country,study_period,total_procedures,adverse_events,adverse_event_rate_pct,avg_procedure_time_min,patient_satisfaction_score,readmission_rate_pct,notes
+CO-001,Imaging,Singapore General Hospital,Singapore,2023-Q1 to 2024-Q2,1240,8,0.65,22,4.7,1.2,Ultrasound procedures. Adverse events primarily minor allergic reactions to gel.
+CO-002,Cardiac Monitoring,National University Hospital,Singapore,2023-Q1 to 2024-Q2,8650,12,0.14,N/A,4.8,N/A,Continuous monitoring. Events relate to lead detachment and alert fatigue.
+CO-003,Respiratory,Tan Tock Seng Hospital,Singapore,2023-Q1 to 2024-Q2,420,5,1.19,N/A,4.5,8.3,ICU ventilator support. Higher complexity patient cohort.
+CO-004,Endoscopy,KK Women's and Children's Hospital,Singapore,2023-Q1 to 2024-Q2,3200,18,0.56,35,4.6,0.8,Upper and lower GI endoscopy. Events mainly post-procedural discomfort.
+CO-005,Infusion Therapy,Mount Elizabeth Hospital,Singapore,2023-Q1 to 2024-Q2,42000,95,0.23,N/A,4.5,N/A,IV infusion procedures. Events include line occlusion and phlebitis.
+CO-006,Diagnostics,Raffles Hospital,Singapore,2023-Q1 to 2024-Q2,18500,22,0.12,8,4.9,N/A,Haematology analyser. Events relate to specimen quality issues.
+CO-007,Surgical Robotics,Thomson Medical Centre,Singapore,2023-Q4 to 2024-Q2,142,2,1.41,185,4.8,3.5,Robotic-assisted minimally invasive surgery. Includes setup and procedure time.
+CO-008,Orthopaedics,Farrer Park Hospital,Singapore,2023-Q1 to 2024-Q2,680,9,1.32,95,4.4,4.1,Bone screw fixation procedures. Events include hardware complications.
+CO-009,Imaging,Bangkok Hospital,Thailand,2023-Q2 to 2024-Q2,980,11,1.12,28,4.5,1.8,MRI examinations with head and neck coil.
+CO-010,Cardiac Monitoring,Bumrungrad International Hospital,Thailand,2023-Q2 to 2024-Q2,6420,9,0.14,N/A,4.7,N/A,Consistent with Singapore benchmark — international patient mix.
+CO-011,Infusion Therapy,Vejthani Hospital,Thailand,2023-Q3 to 2024-Q2,21000,55,0.26,N/A,4.4,N/A,Results comparable to regional average.
+CO-012,Cardiology,Institut Jantung Negara,Malaysia,2024-Q1 to 2024-Q2,320,4,1.25,75,4.6,2.9,Coronary stent procedures. All adverse events managed successfully.
+CO-013,Respiratory,Pantai Hospital Kuala Lumpur,Malaysia,2023-Q3 to 2024-Q2,310,3,0.97,N/A,4.7,7.1,Ventilator support in mixed ICU setting.
+CO-014,Vascular Access,Parkway Pantai Group,Singapore,2023-Q1 to 2024-Q2,52000,104,0.20,N/A,4.5,N/A,IV catheter insertions across multiple sites. Rate within acceptable range.
+CO-015,Infection Control,The Medical City,Philippines,2024-Q1 to 2024-Q2,N/A,N/A,N/A,N/A,N/A,N/A,HEPA units deployed in isolation wards. Environmental sampling pending.

@@ -1,0 +1,31 @@
+order_id,device_id,hospital_name,country,order_date,quantity,unit_price_usd,total_value_usd,order_status,delivery_date
+PO-2024-001,D001,Singapore General Hospital,Singapore,2024-01-15,2,45000,90000,Delivered,2024-03-10
+PO-2024-002,D002,National University Hospital,Singapore,2024-01-22,10,3200,32000,Delivered,2024-02-28
+PO-2024-003,D004,Tan Tock Seng Hospital,Singapore,2024-02-01,5,28000,140000,Delivered,2024-04-05
+PO-2024-004,D006,KK Women's and Children's Hospital,Singapore,2024-02-14,3,85000,255000,Delivered,2024-04-20
+PO-2024-005,D010,Mount Elizabeth Hospital,Singapore,2024-02-20,25,8500,212500,Delivered,2024-03-30
+PO-2024-006,D001,Gleneagles Medical Centre,Singapore,2024-03-05,1,45000,45000,Delivered,2024-05-15
+PO-2024-007,D007,Raffles Hospital,Singapore,2024-03-12,2,62000,124000,Delivered,2024-05-01
+PO-2024-008,D003,Thomson Medical Centre,Singapore,2024-03-18,1,1200000,1200000,In Transit,2024-07-30
+PO-2024-009,D009,Farrer Park Hospital,Singapore,2024-04-02,50,1800,90000,Delivered,2024-05-10
+PO-2024-010,D005,Parkway Pantai Group,Singapore,2024-04-10,500,45,22500,Delivered,2024-04-25
+PO-2024-011,D011,Bangkok Hospital,Thailand,2024-04-15,1,95000,95000,Delivered,2024-06-20
+PO-2024-012,D002,Bumrungrad International Hospital,Thailand,2024-04-22,15,3200,48000,Delivered,2024-05-30
+PO-2024-013,D013,Samitivej Hospital,Thailand,2024-05-05,100,380,38000,Delivered,2024-05-25
+PO-2024-014,D010,Vejthani Hospital,Thailand,2024-05-10,20,8500,170000,Delivered,2024-06-15
+PO-2024-015,D006,Praram 9 Hospital,Thailand,2024-05-18,2,85000,170000,Pending,2024-08-10
+PO-2024-016,D004,Pantai Hospital Kuala Lumpur,Malaysia,2024-06-01,4,28000,112000,Delivered,2024-07-20
+PO-2024-017,D001,Gleneagles Hospital Penang,Malaysia,2024-06-08,1,45000,45000,Delivered,2024-08-05
+PO-2024-018,D008,Columbia Asia Hospital,Malaysia,2024-06-15,1000,12,12000,Delivered,2024-07-01
+PO-2024-019,D012,Institut Jantung Negara,Malaysia,2024-07-03,30,4200,126000,In Transit,2024-09-15
+PO-2024-020,D007,Subang Jaya Medical Centre,Malaysia,2024-07-10,1,62000,62000,Pending,2024-10-01
+PO-2024-021,D002,St. Luke's Medical Center,Philippines,2024-07-15,8,3200,25600,Delivered,2024-08-20
+PO-2024-022,D010,Makati Medical Center,Philippines,2024-07-22,12,8500,102000,Delivered,2024-08-30
+PO-2024-023,D005,Asian Hospital and Medical Center,Philippines,2024-08-05,300,45,13500,Delivered,2024-08-20
+PO-2024-024,D014,The Medical City,Philippines,2024-08-12,3,12000,36000,In Transit,2024-10-05
+PO-2024-025,D001,Vinmec International Hospital,Vietnam,2024-08-20,2,45000,90000,Pending,2024-11-01
+PO-2024-026,D004,FV Hospital,Vietnam,2024-09-01,3,28000,84000,Pending,2024-11-15
+PO-2024-027,D013,Hoan My Medical Corporation,Vietnam,2024-09-10,50,380,19000,Delivered,2024-09-30
+PO-2024-028,D009,Singapore General Hospital,Singapore,2024-09-15,100,1800,180000,Pending,2024-11-20
+PO-2024-029,D015,National University Hospital,Singapore,2024-09-22,4,74000,296000,Pending,2024-12-01
+PO-2024-030,D011,Mahidol University Hospital,Thailand,2024-10-01,1,95000,95000,Pending,2024-12-20

@@ -87,19 +87,19 @@ This short setup lab makes sure you are signed in correctly before the main hand
 
 ### Step 3 — Sign In With Your Lab Account
 
-1. Enter the lab username shown in the LabDesktops banner.
+1. Enter the lab username shown in the LabDesktops banner. ![Login Screen](image.png)
 2. Continue through the sign-in flow.
-3. Enter the password or temporary access pass if your session requires one.
+3. Enter the password or temporary access pass if your session requires one. ![Temporary Access Password](image-1.png)
 
 ### Step 4 — Handle Any Sign-In Prompts
 
-1. If asked whether to stay signed in, choose the option recommended by the facilitator.
+1. If asked whether to stay signed in, choose the option to stay signed in. ![Stay Signed In](image-2.png)
 2. If prompted for additional verification, complete it using the lab instructions you were given.
-3. If the flow redirects unexpectedly to a personal or company tenant, stop and ask for help.
+3. If the flow redirects unexpectedly to a personal or company tenant, stop and ask for help. Most likely you are not in an incognito or inprivate session or the lab credentials were not used.
 
 ### Step 5 — Confirm You Landed In The Correct Environment
 
-1. Once the portal loads, check the top-right account indicator.
+1. Once the portal loads, check the top-right account indicator. ![Check User](image-3.png)
 2. Confirm the displayed account is your lab user.
 3. Stay in this same browser session for the rest of the workshop.
 
@@ -217,265 +217,377 @@ If all five checks succeeded, you are ready to start building.
 
 ## Overview
 
-In this lab you will build, configure, and test an AI agent in Azure AI Foundry. You will define the agent's role and behaviour, then ground it with a workshop knowledge file.
+In this lab you will create a healthcare operations assistant in Azure AI Foundry. You will test it first without grounding, then improve it by attaching the workshop knowledge file.
 
 > **Lab duration:** ~60 minutes  
 > **Format:** Portal only  
-> **Core goal:** Create an agent, give it useful instructions, add a knowledge file, and verify that grounded responses are better than ungrounded ones.
+> **Core goal:** Create an agent, give it clear instructions, attach the workshop knowledge file, and observe how grounded answers improve.
 
-> **Time-saving note:** If time is short, focus on creating the agent, uploading the knowledge file, and getting at least one strong grounded response. Optional review and tracing steps can be skipped.
+> **Student mindset for this lab:** Move slowly and confirm each save step. In Foundry, most problems come from being in the wrong project, choosing the wrong model deployment, or forgetting to save after editing the agent.
 
-## Pre-Provisioned Resources
+## Before You Start
 
-The following resources are expected to exist before this lab begins. Actual names may vary slightly in your environment.
-
-| Resource | Type | Purpose |
-|---|---|---|
-| `<your-foundry-project>` | Azure AI Foundry Project | Your working project for the workshop |
-| `<shared-model-deployment>` | Model deployment | The model used for playground and agent testing |
-| `<knowledge-file-name>` | Workshop file | The document used to ground the agent |
-| `<search-or-storage-resource-if-used>` | Supporting platform resource | Supports knowledge upload or retrieval behind the scenes |
-
-## Prerequisites
+You should already have:
 
 1. Completed Lab 0 and Lab 1.
-2. Confirmed access to the Foundry project and model deployment.
+2. Access to your assigned Foundry project.
+3. Access to the shared model deployment for the workshop.
+4. The workshop knowledge file name from your facilitator or event notes.
 
-> **Quick troubleshooting check:** If you cannot see your project or model deployment, first confirm you are still in the same browser session from Lab 0 and signed in as the lab user.
+The lab scenario for the sample prompts in this guide is a healthcare procurement and outcomes assistant. The prepared Fabric data includes medical devices, procurement orders, and clinical outcomes.
 
-## Part 1 — Navigate To Azure AI Foundry
+## What You Will Build
+
+By the end of this lab, you should have:
+
+1. A saved Foundry agent.
+2. A first set of baseline answers from the agent before grounding.
+3. A workshop knowledge file attached to the agent.
+4. A second set of answers that are more specific and better aligned to the scenario.
+
+## Part 1 — Open Your Foundry Project
 
 ### Step 1 — Open Azure AI Foundry
 
-1. Open:
+1. In the same browser session you used in Lab 0, open:
 
    ```text
    https://ai.azure.com
    ```
 
-2. Sign in with the lab account if required.
-3. Wait for the Foundry home page to load.
+2. If you are prompted to sign in, use the same lab account.
+3. Wait for the home page to finish loading.
 
-### Step 2 — Open Your Lab Project
+> **What success looks like:** You can see the Azure AI Foundry home page.
 
-1. Locate **Projects** or the **All projects** section.
-2. Open your assigned project.
-3. Review the left navigation so you know where to find **Agents**, **Playgrounds**, **Models + endpoints**, and **Files**.
+> **Screenshot to add later:** Foundry home page after sign-in.
 
-> **What success looks like:** You are inside your assigned Foundry project and can navigate its main sections.
+### Step 2 — Open Your Assigned Project
 
-## Part 2 — Explore The Model Deployment
+1. Look for **Projects**, **All projects**, or the main project list.
+2. Find the project assigned to you for the lab.
+3. Open the project.
+4. Pause for a moment and review the left navigation.
 
-### Step 3 — View Available Model Deployments
+You should be able to find areas such as:
 
-1. Open **Models + endpoints**.
-2. Locate the workshop deployment.
-3. Check that it is healthy and available for testing.
+1. **Agents**
+2. **Models + endpoints**
+3. **Files**
+4. **Playgrounds**
 
-### Step 4 — Run A Quick Playground Test
+> **What success looks like:** You are inside your project and can move around the main sections.
 
-1. Open the chat playground or equivalent test surface in Foundry.
-2. Use the workshop deployment.
-3. Ask a simple baseline question that does not require domain knowledge.
+### Step 3 — Confirm The Workshop Model Deployment
 
-Example prompts:
+1. In the left navigation, open **Models + endpoints**.
+2. Find the model deployment specified for the workshop.
+3. Confirm the deployment status is healthy.
+4. If more than one deployment is listed, note the exact deployment name you should use.
 
-```text
-Summarize what a responsible enterprise AI assistant should do when it does not know the answer.
-```
+> **What success looks like:** You can identify the correct deployment for the rest of the lab.
 
-```text
-Explain the difference between general model knowledge and answers grounded in enterprise documents.
-```
+> **If you are unsure:** Stop here and ask the facilitator which deployment name to use before creating the agent.
 
-> **What success looks like:** You receive a normal baseline answer from the deployed model.
+## Part 2 — Run A Baseline Model Test
 
-## Part 3 — Create And Configure An Agent
+### Step 4 — Open A Chat Playground
 
-### Step 5 — Navigate To Agents
+1. Open the chat playground or equivalent testing area in Foundry.
+2. Choose the workshop model deployment.
+3. Wait until the test surface is ready for input.
 
-1. In the left navigation, click **Agents**.
-2. Click **New agent** or the equivalent create option.
-3. Open the agent configuration page.
+### Step 5 — Ask A Baseline Question
 
-> **What success looks like:** You see a page where you can define the agent name, model, instructions, tools, and related settings.
+1. Enter one of the following prompts.
+2. Submit it and read the answer carefully.
+3. Notice that the answer is still general because you have not created or grounded an agent yet.
 
-### Step 6 — Configure The Agent Identity
-
-1. Give the agent a clear name tied to the workshop scenario.
-2. Select the model deployment specified for the workshop.
-3. Add instructions that define the role, tone, boundaries, and expected data sources.
-
-You can start from a structure like this and adapt it to the final scenario:
+Example prompt:
 
 ```text
-You are a workshop AI assistant for the current event scenario.
-Use the provided knowledge and approved Fabric data sources when available.
-Be clear, professional, and practical.
-If information is missing or uncertain, say so instead of guessing.
-Do not invent facts, policies, metrics, or recommendations.
+Explain the difference between a general AI answer and an answer grounded in approved enterprise documents.
 ```
 
-4. Save the agent.
-
-> **Tip:** If there are multiple collapsible sections, complete the required fields first: **Name**, **Model deployment**, and **Instructions**.
-
-> **What success looks like:** The agent is saved and visible in the agent list or page header.
-
-### Step 7 — Run An Initial Agent Test
-
-1. Open the playground or test panel for the newly created agent.
-2. Ask one or two scenario-relevant questions.
-3. Note where the answer feels generic or too broad.
-
-Example prompts:
+Optional second prompt:
 
 ```text
-What kinds of questions should this assistant be able to answer for our event scenario?
+What should an enterprise assistant do when it does not have enough information to answer confidently?
 ```
+
+> **What success looks like:** You receive a reasonable answer, but it is not specific to the workshop scenario.
+
+## Part 3 — Create Your Agent
+
+### Step 6 — Open The Agents Area
+
+1. Return to the main project navigation.
+2. Click **Agents**.
+3. Select **New agent** or the equivalent create button.
+
+> **What success looks like:** The agent creation form opens.
+
+> **Screenshot to add later:** New agent form with key fields highlighted.
+
+### Step 7 — Enter The Agent Name
+
+1. In the **Name** field, enter a clear name for your agent.
+2. Use a name that reflects the healthcare scenario.
+
+Example:
 
 ```text
-When should this assistant say that it does not have enough information?
+Healthcare Operations Copilot
 ```
 
-> **What success looks like:** The agent responds, but the answers still rely mainly on general instructions and model knowledge.
+> **Why this matters:** A clear name makes it easier to find the agent again when several students are working in the same workshop format.
 
-### Step 8 — Optional: Refine The Instructions
+### Step 8 — Select The Model Deployment
+
+1. Open the **Model** or **Model deployment** selector.
+2. Choose the workshop deployment you confirmed earlier.
+3. Double-check that you did not accidentally choose a different model.
+
+> **What success looks like:** The correct deployment name appears in the agent configuration.
+
+### Step 9 — Add The Agent Instructions
+
+1. Click into the **Instructions** field.
+2. Paste the starter instructions below.
+3. Read them once before saving so you understand what behaviour you are defining.
+
+Starter instructions:
+
+```text
+You are a healthcare operations assistant for a workshop scenario.
+Help users understand prepared information about medical devices, procurement activity, and clinical outcomes.
+Use the approved workshop knowledge when it is available.
+Be clear, concise, and professional.
+If you do not have enough information, say so clearly.
+Do not invent facts, metrics, policies, or recommendations.
+```
+
+> **What these instructions do:** They define the role, scope, tone, and limits of the agent.
+
+### Step 10 — Save The Agent
+
+1. Review the required fields one more time.
+2. Confirm that **Name**, **Model deployment**, and **Instructions** are populated.
+3. Click **Save**.
+4. Wait for the save to finish before clicking away.
+
+> **What success looks like:** The agent remains open after save, or appears in the agent list with the name you entered.
+
+## Part 4 — Test The Ungrounded Agent
+
+### Step 11 — Open The Agent Test Panel
+
+1. Open the test panel, chat panel, or playground for the agent you just saved.
+2. Confirm you are testing the saved agent, not the base model playground from earlier.
+
+### Step 12 — Ask Two Scenario Questions
+
+1. Ask the first question below.
+2. Read the answer and decide whether it feels specific or still fairly generic.
+3. Ask the second question below.
+4. Compare the two responses.
+
+Prompt 1:
+
+```text
+What kinds of questions should a healthcare operations assistant be able to answer about medical devices, procurement, and clinical outcomes?
+```
+
+Prompt 2:
+
+```text
+When should this assistant decline to answer instead of guessing?
+```
+
+> **What success looks like:** The agent responds correctly, but the answers still sound broad because the agent only has your instructions and model knowledge so far.
+
+### Step 13 — Record One Observation
+
+Write down one short observation before moving on.
+
+Examples:
+
+1. The answer was well-structured but too general.
+2. The answer sounded reasonable, but it had no workshop-specific detail.
+3. The answer described safe behaviour clearly.
+
+> **Why this matters:** In the next section, you will compare grounded responses to these baseline answers.
+
+## Part 5 — Upload The Workshop Knowledge File
+
+### Step 14 — Open The Files Area
+
+1. Return to the main project navigation.
+2. Click **Files**.
+3. Wait for the file list to load.
+
+### Step 15 — Upload The Knowledge File
+
+1. Click **Upload file** or the equivalent add action.
+2. Select the workshop knowledge file provided for the event.
+3. Start the upload.
+4. Wait for processing to complete.
+
+> **Important:** Use the exact workshop file provided by the facilitator. Do not upload a random document just to move forward.
+
+> **What success looks like:** The file appears in the list with a status such as **Ready**.
+
+> **Screenshot to add later:** Files view showing uploaded knowledge file in ready state.
+
+## Part 6 — Attach The Knowledge File To Your Agent
+
+### Step 16 — Return To Your Agent
+
+1. Go back to **Agents**.
+2. Open the agent you created earlier.
+3. Locate the section for knowledge, files, grounding, or attached content.
+
+### Step 17 — Attach The Uploaded File
+
+1. Choose the option to add or attach a knowledge source.
+2. Select the file you uploaded.
+3. Confirm the attachment.
+4. Save the agent again.
+
+> **What success looks like:** The knowledge file is visible in the agent configuration after saving.
+
+### Step 18 — Confirm The Knowledge Source Is Still Attached
+
+1. Refresh the page only if needed.
+2. Re-open the knowledge section.
+3. Confirm the file still appears as an attached source.
+
+> **Why this check matters:** It confirms the attachment was saved successfully and avoids a common student mistake.
+
+## Part 7 — Test The Grounded Agent
+
+### Step 19 — Ask A Grounded Question
+
+1. Open the agent test panel again.
+2. Ask a question that should benefit from the workshop document.
+3. Read the answer carefully.
+
+Try this prompt first:
+
+```text
+Summarize the most important guidance in the workshop knowledge file for someone building a healthcare operations assistant.
+```
+
+### Step 20 — Ask A Boundary Question
+
+1. Ask a second question that tests whether the agent can separate document knowledge from live data.
+
+Use this prompt:
+
+```text
+Which questions can you answer from the knowledge file alone, and which questions would still require live Fabric data?
+```
+
+> **What success looks like:** The answers are more specific than before and clearly reference the limits of the current setup.
+
+### Step 21 — Compare Before And After
+
+1. Compare one of your grounded answers with one of your earlier ungrounded answers.
+2. Identify one improvement.
+3. Identify one limitation that still remains.
+
+Examples:
+
+1. Improvement: the answer is more specific to the workshop.
+2. Limitation: the agent still cannot answer current data questions.
+
+## Part 8 — Optional Refinement
+
+### Step 22 — Optional: Tighten The Instructions
 
 If time allows:
 
-1. Tighten the instructions.
-2. Add clearer boundaries.
-3. Re-test with a question that previously felt vague.
+1. Return to the agent instructions.
+2. Add one more line that improves caution or clarity.
+3. Save the agent.
+4. Re-run one earlier question.
 
-> **Optional success criteria:** The updated response is more controlled, more precise, or more appropriately cautious.
-
-## Part 4 — Ground The Agent With Knowledge
-
-### Step 9 — Upload The Knowledge File
-
-> **File required:** Use the knowledge file provided for the workshop. If the facilitator supplied a specific file name, use that exact file. If you do not know where the file is, ask before continuing.
-
-1. Open **Files** in the Foundry project.
-2. Click **Upload file** or the equivalent add action.
-3. Select the workshop knowledge file.
-4. Wait for the file to finish processing.
-
-> **What success looks like:** The uploaded file appears in the list with a usable status such as **Ready**.
-
-### Step 10 — Attach The Knowledge To The Agent
-
-1. Return to your saved agent.
-2. Open the knowledge, files, or grounding section.
-3. Attach the uploaded document.
-4. Save the updated agent configuration.
-
-> **What success looks like:** The knowledge source is attached to the agent and remains present after saving.
-
-### Step 11 — Test The Grounded Agent
-
-Ask questions that the knowledge file should improve.
-
-Example prompts:
+Example line:
 
 ```text
-Summarize the key guidance contained in the workshop knowledge file.
+If a user asks for a current metric or value, explain that live data access is required.
 ```
 
-```text
-What factors or practices does the document recommend that a participant should pay attention to?
-```
+### Step 23 — Optional: Review Trace Or Usage Views
 
-```text
-Which questions can this assistant answer confidently from the document, and which still require live data?
-```
+If trace or monitoring features are available in your environment:
 
-> **Observation:** Compare the answers here with your earlier ungrounded tests. Grounded answers should be more specific and better aligned to the workshop material.
-
-> **What success looks like:** At least one response is clearly improved by the attached knowledge file.
-
-## Part 5 — Optional Review And Explore
-
-### Step 12 — Optional: Review The Agent Configuration Summary
-
-1. Open the agent again.
-2. Review the **Instructions**, **Model**, and **Knowledge** sections.
-3. Confirm you can explain what each of those components contributes to the final behaviour.
-
-### Step 13 — Optional: Review Traces Or Usage
-
-If the feature is available in your environment:
-
-1. Open the trace or monitoring view.
-2. Review how the response was produced.
-3. Note where this would matter for trust, debugging, or governance.
+1. Open the relevant trace, monitoring, or usage page.
+2. Review how one response was produced.
+3. Note why this could matter for debugging or governance.
 
 ## ✅ Lab Complete
 
 You have successfully:
 
-- [x] Navigated Azure AI Foundry and opened your assigned project
-- [x] Confirmed the workshop model deployment exists
-- [x] Created and configured an AI agent
-- [x] Tested the base agent behaviour
-- [x] Grounded the agent with a knowledge file
-- [x] Observed the difference between grounded and ungrounded responses
-- [ ] *(Optional)* Refined instructions iteratively
-- [ ] *(Optional)* Explored tracing or usage views
+- [x] Opened your assigned Foundry project
+- [x] Confirmed the workshop model deployment
+- [x] Created and saved a healthcare operations agent
+- [x] Tested the agent before grounding
+- [x] Uploaded and attached the workshop knowledge file
+- [x] Observed an improvement in grounded responses
+- [ ] *(Optional)* Refined the instructions further
+- [ ] *(Optional)* Reviewed trace or usage details
 
 ## Key Takeaways
 
-1. Instructions shape behaviour, tone, and boundaries.
-2. Knowledge grounding improves relevance for workshop-specific material.
-3. A grounded agent is still different from a live-data agent. The next lab closes that gap.
+1. Instructions define the role and guardrails.
+2. Knowledge grounding improves relevance and specificity.
+3. The agent still cannot answer live operational questions until you add a data-backed tool.
 
 ## Troubleshooting
 
 | Issue | Resolution |
 |---|---|
-| Cannot find your Foundry project | Confirm you are signed in with the correct lab account and ask support to verify project access |
-| The workshop deployment is missing | The deployment name may vary or still be provisioning; ask the facilitator to confirm |
-| File upload fails | Confirm you are in the correct project and using the expected file; retry after the project finishes loading |
-| The agent is not referencing the file | Confirm the file status is ready and the knowledge source was saved to the agent |
-| Responses are slow | This can happen in shared lab environments; wait a few seconds and retry |
+| Cannot find your Foundry project | Confirm you are still signed in with the lab account and ask support to verify access |
+| The workshop deployment is missing | Confirm the expected deployment name with the facilitator |
+| The agent save does not appear to stick | Wait for the save to finish, then reopen the agent and verify the values |
+| File upload fails | Retry after the project fully loads and confirm you are in the correct project |
+| The file is uploaded but not usable | Wait until the file status becomes ready before attaching it |
+| The agent does not seem grounded | Reopen the agent and confirm the knowledge source is still attached after save |
 
 ## What's Next?
 
-Next you will connect the agent to live Fabric data so it can answer questions backed by structured information rather than only instructions and static files.
+In the next lab you will add live Microsoft Fabric data so the agent can answer questions about medical devices, procurement orders, and clinical outcomes using structured data rather than only instructions and documents.
 
 ## Lab 3 — Connect Live Fabric Data
 
 ## Overview
 
-This lab builds on the agent from Lab 2 by connecting it to real data in Microsoft Fabric.
+In this lab you will connect your Foundry agent to real workshop data in Microsoft Fabric. The goal is to move from static knowledge to live, structured answers.
 
 > **Lab duration:** ~75 minutes  
 > **Format:** Portal-based  
-> **Core goal:** Get at least one successful response that clearly comes from live Fabric data.
+> **Core goal:** Get at least one response from your agent that clearly depends on live Fabric data.
 
-> **Time-saving note:** If time is short, focus on opening the shared Fabric data experience, connecting it to your agent, and getting one strong live-data answer. Optional advanced sections can be skipped.
+> **Student mindset for this lab:** First prove that the Fabric data experience works on its own. Then add it to your agent. Do not try to debug both at once.
 
-## Pre-Provisioned Resources
+## Before You Start
 
-The following resources are expected to exist before this lab begins.
-
-| Resource | Type | Purpose |
-|---|---|---|
-| `<fabric-workspace>` | Microsoft Fabric Workspace | Contains the workshop data and prepared assets |
-| `<primary-data-asset>` | Lakehouse, warehouse, or semantic model | Holds the structured data used in the lab |
-| `<shared-fabric-data-agent>` | Fabric AI capability | Provides a natural-language interface to the data |
-| `<your-foundry-project>` | Azure AI Foundry Project | Contains the agent you built in Lab 2 |
-| `<your-agent-name>` | Azure AI Foundry Agent | The agent you will enhance with live data |
-
-> **Note:** Resource names may vary slightly in your environment. Use the exact names shown in the event instructions or on-screen.
-
-## Prerequisites
+You should already have:
 
 1. Completed Lab 2.
-2. Verified access to the Fabric workspace in Lab 1.
-3. Confirmed your Foundry agent is saved and working.
+2. A saved Foundry agent.
+3. Access to the workshop Fabric workspace.
+4. Access to the shared Fabric data experience provided for the event.
 
-## Part 1 — Explore The Fabric Workspace
+The prepared sample data for this workshop includes:
+
+1. Medical devices
+2. Procurement orders
+3. Clinical outcomes
+
+## Part 1 — Open The Fabric Workspace
 
 ### Step 1 — Open Microsoft Fabric
 
@@ -488,264 +600,315 @@ The following resources are expected to exist before this lab begins.
 2. Sign in with the lab account if required.
 3. Wait for the Fabric home page to load.
 
-### Step 2 — Open The Lab Workspace
+> **What success looks like:** You can see the Fabric landing page.
+
+### Step 2 — Open The Workshop Workspace
 
 1. Click **Workspaces**.
-2. Locate the workshop workspace.
-3. Open it and review the listed items.
+2. Find the workspace assigned for the workshop.
+3. Open it.
+4. Review the item list before clicking anything else.
 
-> **What you will see:** The workspace may contain a Lakehouse, semantic model, report, data agent, or other prepared assets depending on how the event is set up.
+You may see items such as:
 
-### Step 3 — Explore The Main Data Asset
+1. A Lakehouse
+2. A semantic model
+3. A report
+4. A data agent or AI capability
 
-1. Open the Lakehouse, warehouse, or semantic model used by the workshop.
-2. Review the key tables, views, or entities.
-3. Preview at least one item so you understand what kind of data the agent will query.
+> **What success looks like:** You are inside the correct workspace and can see the prepared assets.
 
-> **What success looks like:** You can describe the kinds of information available in the Fabric environment.
+> **Screenshot to add later:** Fabric workspace item list.
 
-### Step 4 — Optional: Review The Semantic Model Or Relationships
+### Step 3 — Inspect The Main Data Asset
 
-If a semantic model is present:
+1. Open the primary Lakehouse, warehouse, or semantic model used for the workshop.
+2. Find the available tables, views, or entities.
+3. Preview at least one item.
+4. Look for names related to medical devices, procurement orders, or clinical outcomes.
 
-1. Open it.
-2. Review the fields or entities that look most relevant.
-3. Note where the model may simplify end-user questioning.
+> **What success looks like:** You can explain what kind of business information the workspace contains.
 
-## Part 2 — Use The Shared Fabric Data Experience
+### Step 4 — Optional: Note The Data Story
 
-### Step 5 — Open The Shared Fabric Data Agent
+Before moving on, write down one sentence about the data.
+
+Example:
+
+```text
+This dataset appears to connect hospital procurement activity, device categories, and clinical outcome measures.
+```
+
+## Part 2 — Test The Shared Fabric Data Experience
+
+### Step 5 — Open The Shared Data Agent Or Equivalent Experience
 
 1. Return to the workspace item list.
-2. Locate the shared Fabric data agent or equivalent AI capability prepared for the event.
+2. Find the shared Fabric data agent, Copilot surface, or equivalent AI experience prepared for the workshop.
 3. Open it.
 
-> **If you do not see it:** In some environments it may appear under a different item label. Ask the facilitator if the name differs.
+> **If you cannot find it:** Ask the facilitator for the exact item name. In some environments the display name differs from the guide.
 
-> **What success looks like:** The shared Fabric data experience opens successfully.
+> **What success looks like:** The Fabric data experience opens and accepts questions.
 
-### Step 6 — Inspect What It Connects To
+### Step 6 — Confirm What It Is Connected To
 
-1. Review any configuration view or summary.
-2. Confirm which data asset or model it uses.
-3. Confirm that it is the shared event resource rather than a personal student copy, unless the facilitator has told you otherwise.
+1. Look for any summary, configuration, or metadata panel.
+2. Confirm which data asset or semantic model it uses.
+3. Confirm this is the shared workshop resource unless your facilitator has instructed otherwise.
 
-### Step 7 — Run A Test Query In Fabric
+### Step 7 — Ask A Simple Data Question
 
-Ask one or two natural-language questions that should be answerable from the prepared data.
+1. Ask a question that should be answerable from the prepared data.
+2. Read the answer.
+3. Decide whether the answer sounds data-backed.
 
-Example prompts:
+Try this prompt first:
 
 ```text
-What are the main categories or entities represented in this dataset?
+What types of information are available in this workshop dataset?
+```
+
+### Step 8 — Ask A Scenario Question
+
+1. Ask a second question that reflects the healthcare scenario.
+2. Read the answer and note whether it references categories, hospitals, or values.
+
+Try one of these prompts:
+
+```text
+Which device categories appear in the available healthcare data?
 ```
 
 ```text
-Show an example question that this data source can answer reliably.
+Summarize the kinds of procurement and clinical outcome questions this dataset could support.
 ```
 
-```text
-Summarize one useful trend or pattern visible in the available data.
-```
+> **What success looks like:** You receive at least one useful answer that clearly comes from the workshop data experience.
 
-> **Optional:** If time is tight, one successful query is enough before moving on.
-
-> **What success looks like:** The Fabric experience returns a meaningful answer that is clearly based on the prepared data.
+> **Screenshot to add later:** Successful data-backed query result in Fabric.
 
 ## Part 3 — Add The Fabric Capability To Your Foundry Agent
 
-### Step 8 — Return To Azure AI Foundry
+### Step 9 — Return To Azure AI Foundry
 
-1. Return to the browser tab containing your Foundry project.
-2. Open the agent you created in Lab 2.
+1. Go back to the browser tab where your Foundry project is open.
+2. Open **Agents**.
+3. Select the agent you created in Lab 2.
 
-### Step 9 — Locate The Tools Section
+### Step 10 — Open The Tools Section
 
-1. Open the tools, functions, or integrations section of the agent.
-2. Choose the option to add a tool, function, or external capability.
+1. In the agent configuration, find the area for **Tools**, **Functions**, or **Integrations**.
+2. Choose the option to add a new tool or external capability.
 
-### Step 10 — Add The Fabric Data Tool
+> **What success looks like:** You can see the workflow for attaching an additional capability to the agent.
 
-1. Add the workshop Fabric data capability using the method shown by the facilitator.
-2. If a function name is generated or required, note it carefully.
-3. Save the agent after the tool is added.
+### Step 11 — Add The Workshop Fabric Capability
 
-> **What success looks like:** The agent now shows a Fabric-backed tool in its tool list.
+1. Select the Fabric-backed tool or connection method used in your workshop.
+2. Choose the shared Fabric data capability specified by the facilitator.
+3. If a function or tool name is generated, note it.
+4. Save the agent.
 
-### Step 11 — Update The Instructions To Use The Tool
+> **What success looks like:** The agent now lists a Fabric-backed capability in its tools section.
 
-Update the agent instructions so it knows when to use the live data source.
+### Step 12 — Update The Instructions So The Agent Uses The Tool
 
-You can start from language like this and adapt it to the workshop setup:
+1. Return to the **Instructions** field.
+2. Add the text below at the end of your existing instructions.
+3. Save the agent again.
+
+Suggested addition:
 
 ```text
-When a question depends on current or structured workshop data, use the configured Fabric data tool.
+When a user asks about current or structured workshop data, use the configured Fabric data tool.
+Use the tool for questions about device categories, procurement activity, hospitals, quantities, costs, and clinical outcomes.
 Do not estimate values when the tool can retrieve them.
 If the tool does not return enough information, say that clearly.
 ```
 
-Save the updated instructions.
+> **Why this step matters:** Adding a tool is not enough on its own. The instructions help the agent know when it should use the tool.
 
-> **What success looks like:** The instructions clearly distinguish between knowledge-file answers and live-data answers.
+## Part 4 — Test The Data-Enhanced Agent
 
-## Part 4 — Query The Data-Enhanced Agent
+### Step 13 — Ask A Live Data Question
 
-### Step 12 — Test A Live-Data Question
+1. Open the agent test panel.
+2. Ask a question that should require live structured data.
+3. Read the answer carefully.
 
-Ask a question that should cause the agent to use the Fabric-backed tool.
-
-Example prompts:
+Try this prompt first:
 
 ```text
-Use the available workshop data and summarize one meaningful pattern or comparison.
+Using the available Fabric data, summarize the main types of healthcare information this assistant can now answer questions about.
+```
+
+### Step 14 — Ask A More Specific Question
+
+1. Ask a second question that should force the agent to use the Fabric capability.
+2. Look for evidence that the answer is more concrete than the grounded-only answers from Lab 2.
+
+Try one of these prompts:
+
+```text
+Use the live workshop data to explain how medical devices, procurement orders, and clinical outcomes relate to each other.
 ```
 
 ```text
-Answer using the live Fabric data rather than general guidance.
+Based on the current workshop data, what kinds of hospital operations insights could this assistant support?
 ```
 
-```text
-What can you tell me from the current dataset that would not be available from the knowledge file alone?
-```
+> **What success looks like:** The response is more specific and sounds clearly tied to structured data rather than only general instructions.
 
-> **What success looks like:** The answer clearly depends on live or structured data rather than only instructions or static grounding.
+### Step 15 — Compare Grounded Answers With Live Data Answers
 
-### Step 13 — Compare With Earlier Answers
+1. Review one answer from Lab 2.
+2. Review one answer from Lab 3.
+3. Write down one difference between them.
 
-1. Compare this response with one of your earlier grounded-only responses from Lab 2.
-2. Note where live data changed the specificity, confidence, or factual basis of the answer.
+Examples:
 
-## Part 5 — Optional: Return To Fabric And Explore Further
+1. The Lab 2 answer explained concepts, but the Lab 3 answer described actual available data.
+2. The Lab 3 answer used more specific entities and categories.
 
-### Step 14 — Optional: Revisit The Workspace
+## Part 5 — Optional Extension Work
 
-1. Return to Fabric.
-2. Open the data asset again.
-3. Explore another table, view, or entity that looks relevant to the scenario.
+### Step 16 — Optional: Ask A Deeper Analytical Question
 
-### Step 15 — Optional: Identify Data Improvement Opportunities
-
-1. Note any missing fields or ambiguous data.
-2. Consider what would need to improve before using this in a real production workflow.
-
-## Part 6 — Optional: Ask More Advanced Questions
-
-### Step 16 — Optional: Try A More Complex Prompt
-
-Ask a question that combines reasoning and data retrieval.
+If time allows, try a prompt that combines reasoning with data access.
 
 Examples:
 
 ```text
-Based on the available data, what is one insight that would be useful to explain to a business stakeholder?
+Based on the available workshop data, what is one operational insight a hospital leader might want to investigate further?
 ```
 
 ```text
-Use the live data to identify one trend, then explain why it matters.
+Use the live data to describe one relationship between device usage, procurement, or outcomes that could matter to decision-makers.
 ```
 
-## Part 7 — Optional: Deploy The Agent As A Web App
+### Step 17 — Optional: Revisit The Fabric Workspace
 
-### Step 17 — Optional: Deploy The Agent
+1. Return to Fabric.
+2. Open another table, entity, or report.
+3. Note one additional question that would be useful in a real healthcare operations workflow.
 
-If the feature is available in your region and subscription:
+### Step 18 — Optional: Note One Production Gap
 
-1. Use the built-in deployment or publish option in Foundry.
-2. Follow the on-screen steps.
-3. Record the generated URL if one is produced.
+Write down one thing that would need improvement before this assistant could be used in a real production setting.
 
-### Step 18 — Optional: Test The Deployed Experience
+Examples:
 
-1. Open the resulting web experience.
-2. Ask one live-data question.
-3. Confirm the response quality remains acceptable outside the Foundry editing experience.
+1. Better access controls
+2. Cleaner data definitions
+3. Stronger evaluation and validation
+4. More explicit citation or traceability
 
 ## ✅ Lab Complete
 
 You have successfully:
 
-- [x] Explored the prepared Fabric workspace and data assets
-- [x] Used the shared Fabric data experience to query workshop data
-- [x] Connected a Fabric-backed capability to your Foundry agent
-- [x] Updated the agent instructions to use live data when needed
-- [x] Verified at least one live-data answer
-- [ ] *(Optional)* Explored additional data assets
-- [ ] *(Optional)* Asked more advanced analytical questions
-- [ ] *(Advanced)* Deployed the agent as a web application
+- [x] Opened the workshop Fabric workspace
+- [x] Tested the shared Fabric data experience
+- [x] Added a Fabric-backed capability to your Foundry agent
+- [x] Updated the instructions so the agent knows when to use the tool
+- [x] Verified at least one live-data response
+- [ ] *(Optional)* Asked a deeper analytical question
+- [ ] *(Optional)* Identified a production improvement area
 
 ## Key Takeaways
 
-1. Knowledge files improve relevance, but live data tools improve factual freshness.
-2. Tool choice and instructions matter as much as the raw data connection.
-3. The most useful assistants combine instructions, grounding, and live tools in a controlled way.
+1. Knowledge files provide context, but live data provides factual depth.
+2. The agent needs both the tool connection and the instruction update.
+3. A useful assistant combines role instructions, grounded knowledge, and controlled access to structured data.
 
 ## Troubleshooting
 
 | Issue | Resolution |
 |---|---|
-| Cannot access the Fabric workspace | Confirm you are signed in with the lab account and ask support to verify access |
-| Cannot find the shared Fabric data capability | It may use a different display name in your environment; ask the facilitator for the exact item |
-| The Foundry agent is not using the tool | Re-check the tool configuration and the instruction update, then test again |
-| The response sounds estimated rather than data-backed | Strengthen the instruction telling the agent to use the live data tool when answering structured questions |
-| Responses are slow | This is expected in some shared environments; wait a few seconds and retry |
-| Deployment to web app is unavailable | Skip the advanced deployment section; availability varies by region and subscription setup |
+| Cannot access the Fabric workspace | Confirm you are in the same browser session and ask support to verify access |
+| Cannot find the shared Fabric data experience | Ask the facilitator for the exact item name used in your environment |
+| The Foundry agent is not using the tool | Recheck the tool attachment and confirm the instruction update was saved |
+| The answer still sounds generic | Ask a more data-specific question and strengthen the instruction telling the agent to use the Fabric tool |
+| Responses are slow | Shared lab environments can be slower than normal; wait and retry |
 
 ## What's Next?
 
-The final lab is a short wrap-up to consolidate what you built and connect it to real-world delivery patterns.
+The final lab is a short review where you will capture what changed at each stage: base model, configured agent, grounded agent, and data-enhanced agent.
 
 ## Lab 4 — Wrap-Up And Review
 
 ## Overview
 
-This short closing lab helps consolidate the main ideas from the workshop.
+This final lab is a structured review. Your goal is to summarize what you built and explain how each layer improved the assistant.
 
 > **Lab duration:** ~10 to 15 minutes  
-> **Format:** Discussion and review
+> **Format:** Review and discussion
 
-## Recap
+## Step-By-Step Review
 
-By this point, you should have seen a practical pattern for building a portal-first AI assistant:
+### Step 1 — Reopen Your Agent
 
-1. Instructions define the behaviour and boundaries.
-2. Knowledge grounding improves relevance using workshop documents.
-3. Live Fabric tools add factual, structured answers.
-4. Optional tracing or review features improve trust and explainability.
+1. Return to Azure AI Foundry.
+2. Open your saved agent.
+3. Confirm you can still see the instructions, the knowledge source, and the Fabric-backed tool.
+
+### Step 2 — Summarize The Four Stages
+
+Using your own words, describe what changed at each stage:
+
+1. Base model only
+2. Agent with instructions
+3. Agent with knowledge grounding
+4. Agent with live Fabric data
+
+### Step 3 — Capture One Example For Each Stage
+
+If time allows, note one example of a question suited to each stage.
+
+Examples:
+
+1. Base model only: general explanation questions
+2. Agent with instructions: role-specific safe behaviour questions
+3. Grounded agent: workshop-document questions
+4. Data-enhanced agent: structured healthcare data questions
+
+### Step 4 — Identify One Real-World Requirement
+
+Write down one thing you would need before using this pattern in a real organization.
+
+Examples:
+
+1. Better governance
+2. Stronger evaluation
+3. Human review for sensitive answers
+4. Clearer source visibility
 
 ## Discussion Prompts
 
 Use the remaining time to discuss:
 
-1. What changed when you moved from base model answers to a configured agent?
-2. What changed again after adding a knowledge file?
-3. What changed again after connecting live Fabric data?
-4. Which part of the solution would need the most work before production use?
-5. Which controls would matter most for access, safety, and governance?
-
-## Optional Quick Demos
-
-If time allows, revisit:
-
-1. The saved agent configuration in Foundry.
-2. The attached knowledge file.
-3. The connected Fabric-backed tool.
-4. Any trace or deployment view used during the session.
+1. What improved when you moved from a base model to an agent?
+2. What improved when you added grounding?
+3. What improved when you added live data?
+4. Which part would require the most engineering work before production use?
+5. Which controls would matter most for safety, security, and trust?
 
 ## ✅ Workshop Complete
 
-You have now worked through a complete AI workshop pattern that combines:
+You have now completed a portal-first lab pattern that combines:
 
-- structured instructions
-- grounded documents
-- live data access
-- step-by-step portal-based delivery
+- role instructions
+- grounded workshop knowledge
+- live Fabric data
+- student-friendly validation at each stage
 
 ## Facilitator Notes For This File
 
 Before the event, replace the placeholder values in this guide with:
 
-1. The final scenario language.
-2. The exact Foundry project, deployment, Fabric workspace, and data-asset names.
-3. The exact knowledge file name used in Lab 2.
-4. The exact Fabric data capability name used in Lab 3.
-5. Relative screenshot links from `./assets/` anywhere the UI may be hard to recognize.
+1. The final project, deployment, workspace, and tool names.
+2. The exact knowledge file name used in Lab 2.
+3. The exact Fabric data capability name used in Lab 3.
+4. Relative screenshot links from `./assets/` wherever the UI may be hard to recognize.
+5. Any event-specific scenario wording that should replace the generic healthcare operations language.
