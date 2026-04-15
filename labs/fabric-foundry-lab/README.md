@@ -55,7 +55,7 @@ You should already have:
 
 This short setup lab makes sure you are signed in correctly before the main hands-on work begins.
 
-> **Lab duration:** ~5 to 10 minutes  
+> **Lab duration:** ~5-10 minutes  
 > **Format:** Browser only
 
 ## Prerequisites
@@ -132,7 +132,7 @@ You are now signed in correctly and ready to verify access to the workshop resou
 
 This lab checks access to the resources you need before the build work starts.
 
-> **Lab duration:** ~10 to 15 minutes  
+> **Lab duration:** ~5-10 minutes  
 > **Format:** Portal-based
 
 ## What Is Already Prepared For You
@@ -268,7 +268,7 @@ If all five checks succeeded, you are ready to start building.
 
 In this lab you will create a healthcare operations assistant in Azure AI Foundry. You will test it first without grounding, then improve it by attaching the workshop knowledge file.
 
-> **Lab duration:** ~60 minutes  
+> **Lab duration:** ~10-15 minutes  
 > **Format:** Portal only  
 > **Core goal:** Create an agent, give it clear instructions, attach the workshop knowledge file, and observe how grounded answers improve.
 
@@ -673,7 +673,7 @@ In the next lab you will add live Microsoft Fabric data so the agent can answer 
 
 In this lab you will connect your Foundry agent to real workshop data in Microsoft Fabric. The goal is to move from static knowledge to live, structured answers.
 
-> **Lab duration:** ~75 minutes  
+> **Lab duration:** ~5-10 minutes  
 > **Format:** Portal-based  
 > **Core goal:** Get at least one response from your agent that clearly depends on live Fabric data.
 
@@ -1000,7 +1000,7 @@ The final lab is a short review where you will capture what changed at each stag
 
 This final lab is a structured review. Your goal is to summarize what you built and explain how each layer improved the assistant.
 
-> **Lab duration:** ~10 to 15 minutes  
+> **Lab duration:** ~5 minutes  
 > **Format:** Review and discussion
 
 ## Step-By-Step Review
