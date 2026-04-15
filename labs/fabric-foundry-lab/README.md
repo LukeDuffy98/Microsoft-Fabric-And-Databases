@@ -713,14 +713,15 @@ The prepared sample data for this workshop includes:
 
 1. Click **Workspaces**.
 2. Find the workspace assigned for the workshop.
-![Wokspaces](image-38.png)
+
+   <img src="image-38.png" alt="Fabric Workspaces view showing the workshop workspace" width="500" />
 
 3. Open it.
 4. Review the item list before clicking anything else.
 
 You may see items such as:
 
-![Fabric Items](image-39.png)
+<img src="image-39.png" alt="Fabric workspace item list showing the lakehouse and related assets" width="500" />
 
 > **What success looks like:** You are inside the correct workspace and can see the prepared assets.
 
@@ -732,7 +733,8 @@ You may see items such as:
 2. Find the available tables, views, or entities.
 3. Preview at least one item.
 4. Look for names related to medical devices, procurement orders, or clinical outcomes.
-![Lakehouse Data](image-40.png)
+
+   <img src="image-40.png" alt="Lakehouse table preview showing clinical outcomes data" width="500" />
 
 > **What success looks like:** You can explain what kind of business information the workspace contains.
 
@@ -743,27 +745,34 @@ You may see items such as:
 ### Step 4 — Open The Shared Data Agent Or Equivalent Experience
 
 1. Return to the workspace item list by closing the lakehouse.
-![Close Lakehouse](image-41.png)
 
-2. Select **New Item**
-![New Item](image-42.png)
+   <img src="image-41.png" alt="Lakehouse tab with the close button highlighted" width="500" />
+
+2. Select **New item**.
+
+   <img src="image-42.png" alt="Fabric workspace toolbar with the New item button" width="500" />
 
 3. Find the Data Agent item.
-![Data Agent Create](image-43.png)
 
-4. Add a name for datagent such as `FabLabDataAgent-NNN` where NNN is lab number.
-![Data Agent Name](image-44.png)
+   <img src="image-43.png" alt="New item dialog filtered to show the Data agent option" width="500" />
 
-5. Skip the tour
+4. Enter a name for the data agent, such as `FabLabDataAgent-NNN`, where `NNN` is your lab number.
 
-6. Select **Add Data** and choose "Data Source"
-![Choose Data](image-45.png)
+   <img src="image-44.png" alt="Create data agent dialog prompting for a data agent name" width="500" />
 
-7. Select your Lakehouse and choose **Add**
-![Select Lakehouse](image-46.png)
+5. Skip the tour if it appears.
 
-8. Then select all 3 table
-![Select Tables](image-47.png)
+6. Select **Add Data** and choose **Data source**.
+
+   <img src="image-45.png" alt="Empty data agent screen with Add Data and Data source options" width="500" />
+
+7. Select your Lakehouse and choose **Add**.
+
+   <img src="image-46.png" alt="Add a data source screen showing the workshop lakehouse" width="500" />
+
+8. Select all three tables.
+
+   <img src="image-47.png" alt="Lakehouse explorer with the three workshop tables selected" width="500" />
 
 
 
@@ -778,7 +787,8 @@ Try this prompt first:
 ```text
 What types of information are available in this workshop dataset?
 ```
-![Question 1](image-48.png)
+
+<img src="image-48.png" alt="Fabric data agent answer summarizing the types of information available in the dataset" width="500" />
 
 
 > **Note** the table names, categories, or values mentioned in the answer. This indicates the agent is using the data rather than just general knowledge.
@@ -800,30 +810,34 @@ Summarize the kinds of procurement and clinical outcome questions this dataset c
 
 > **What success looks like:** You receive at least one useful answer that clearly comes from the workshop data experience.
 
-> **Note** You can also add custom instructions, data source instructions and example queries. Play around with the experience if you have time, but be sure to at least get a clear data-backed answer before moving on.
+> **Note** You can also add custom instructions, data source instructions, and example queries. Explore these options if you have time, but make sure you get a clear data-backed answer before moving on.
 
-![Agent IUnstructions](image-51.png)
+<img src="image-51.png" alt="Fabric data agent instructions screen" width="500" />
 
-![Datasource Instructions](image-50.png)
+<img src="image-50.png" alt="Fabric data source instructions screen" width="500" />
 
-![Example Queries](image-49.png)
+<img src="image-49.png" alt="Fabric example queries screen for the selected workshop tables" width="500" />
 
 ### Step 9 — Publish your Data Agent
 
-1. Choose the publish option from the ribbon
-![Publish](image-52.png)
+1. Choose **Publish** from the ribbon.
+
+   <img src="image-52.png" alt="Data agent ribbon with the Publish option" width="500" />
 
 
-2. Then select publish. Do not change any settings 
-![Publish Options](image-53.png)
+2. Select **Publish** again. Do not change any settings.
+
+   <img src="image-53.png" alt="Publish data agent dialog with the publish confirmation button" width="500" />
 
 3. After publishing choose the settings gear on the ribbon.
-![Settings Icon](image-54.png)
+
+   <img src="image-54.png" alt="Published data agent toolbar with the settings icon" width="500" />
 
 4. Copy the **Published URL** and save it for the next section.
-![Published URL](image-55.png)
 
-You will need to copy the workspace value (Between workspace/ and /agent in the URL) and the agent value (after /agent/) to connect this data agent to your Foundry agent in the next section.
+   <img src="image-55.png" alt="Publishing settings page showing the data agent Published URL" width="500" />
+
+You will need the workspace value, which appears between `workspace/` and `/agent` in the URL, and the agent value, which appears after `/agent/`, to connect this data agent to your Foundry agent in the next section.
 
 
 
@@ -838,19 +852,22 @@ You will need to copy the workspace value (Between workspace/ and /agent in the 
 
 ### Step 11 — Open The Knowledge Section
 
-1. In the knowledge section, choose to add a new knowledge source.
-2. Choose **Microsoft Fabric**
-![Knowledge Sources](image-56.png)
+1. In the **Knowledge** section, choose to add a new knowledge source.
+2. Choose **Microsoft Fabric**.
+
+   <img src="image-56.png" alt="Add knowledge panel showing Microsoft Fabric as a knowledge source option" width="500" />
 
 3. Choose the option to **create connection**.
-![Create Connection](image-57.png)
 
-4. Set the workspace-id and artifact-id using the values in the published URL from the previous section. The workspace-id is the value between workspace/ and /agent in the URL, and the artifact-id is the value after /agent/ in the URL.
-![Connection Settings](image-58.png)
+   <img src="image-57.png" alt="Create connection option in the Microsoft Fabric knowledge flow" width="500" />
+
+4. Set the `workspace-id` and `artifact-id` using the values in the published URL from the previous section. The `workspace-id` is the value between `workspace/` and `/agent` in the URL, and the `artifact-id` is the value after `/agent/`.
+
+   <img src="image-58.png" alt="Create Microsoft Fabric connection form with workspace-id and artifact-id fields" width="500" />
 
 5. Set the connection name to something recognizable such as `FabLabDataAgent-NNN Connection`.
 
-6. Then choose **Connect**
+6. Then choose **Connect**.
 
 
 
@@ -871,7 +888,7 @@ Do not estimate values when the tool can retrieve them.
 If the tool does not return enough information, say that clearly.
 ```
 
-![Updated Instructions](image-59.png)
+<img src="image-59.png" alt="Foundry agent instructions field with appended guidance to use the Fabric data tool" width="500" />
 
 > **Why this step matters:** Adding a tool is not enough on its own. The instructions help the agent know when it should use the tool.
 
@@ -888,7 +905,8 @@ Try this prompt first:
 ```text
 Using the available Fabric data, summarize the main types of healthcare information this assistant can now answer questions about.
 ```
-> **Note** the file source is used to return data-backed answers rather than just general knowledge or Fabric Data.
+
+> **Note** The Fabric source should now return data-backed answers rather than relying only on general knowledge or uploaded files.
 
 ### Step 13 — Ask A More Specific Question
 
@@ -901,7 +919,7 @@ Try one of these prompts:
 Use the live data to explain how medical devices, procurement orders, and clinical outcomes relate to each other.
 ```
 
-> **Note** the Fabric source is used to return data-backed answers.
+> **Note** Look for evidence that the Fabric source is being used to return data-backed answers.
 
 ```text
 Based on the current data, what kinds of hospital operations insights could this assistant support?
