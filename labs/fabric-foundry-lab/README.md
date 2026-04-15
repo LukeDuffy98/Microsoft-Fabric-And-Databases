@@ -87,19 +87,19 @@ This short setup lab makes sure you are signed in correctly before the main hand
 
 ### Step 3 — Sign In With Your Lab Account
 
-1. Enter the lab username shown in the LabDesktops banner. ![Login Screen](image.png)
+1. Enter the lab username shown in the LabDesktops banner. ![Microsoft sign-in page with the username field for the lab account](image.png)
 2. Continue through the sign-in flow.
-3. Enter the password or temporary access pass if your session requires one. ![Temporary Access Password](image-1.png)
+3. Enter the password or temporary access pass if your session requires one. ![Temporary Access Pass screen for the lab account sign-in flow](image-1.png)
 
 ### Step 4 — Handle Any Sign-In Prompts
 
-1. If asked whether to stay signed in, choose the option to stay signed in. ![Stay Signed In](image-2.png)
+1. If asked whether to stay signed in, choose the option to stay signed in. ![Microsoft prompt asking whether to stay signed in](image-2.png)
 2. If prompted for additional verification, complete it using the lab instructions you were given.
-3. If the flow redirects unexpectedly to a personal or company tenant, stop and ask for help. Most likely you are not in an incognito or inprivate session or the lab credentials were not used.
+3. If the flow redirects unexpectedly to a personal or company tenant, stop and ask for help. This usually means you are not in an InPrivate or Incognito session, or the lab credentials were not used.
 
 ### Step 5 — Confirm You Landed In The Correct Environment
 
-1. Once the portal loads, check the top-right account indicator. ![Check User](image-3.png)
+1. Once the portal loads, check the top-right account indicator. ![Azure portal showing the signed-in lab account in the top-right corner](image-3.png)
 2. Confirm the displayed account is your lab user.
 3. Stay in this same browser session for the rest of the workshop.
 
@@ -148,7 +148,7 @@ The workshop environment should already provide access to:
    https://portal.azure.com
    ```
 
-2. Confirm the account in the top-right corner is still your lab account. ![Check User](image-3.png)
+2. Confirm the account in the top-right corner is still your lab account. ![Azure portal showing the signed-in lab account in the top-right corner](image-3.png)
 
 > **Success criteria:** The displayed identity matches the lab credentials used in Lab 0.
 
@@ -159,24 +159,26 @@ The workshop environment should already provide access to:
    ```text
    https://ai.azure.com
    ```
-![Foundry Page](image-4.png)
 
-2. If prompted to sign in, use the same lab account. ![Resource List](image-5.png)
+   ![Microsoft Foundry landing page after opening ai.azure.com](image-4.png)
+
+2. If prompted to sign in, use the same lab account. ![Microsoft Foundry project selection or resource list view](image-5.png)
 3. Open the project list or all-projects view.
-4. Find your assigned project. ![Choose Project](image-6.png)
-   The project name will be a reflection of lab username, the 3 digit number in your account will match the oproject name prefix of proj-seatNNN
+4. Find your assigned project. ![Project selection screen showing the assigned student project](image-6.png)
+   The project name should align with your lab username. In most cases, the three-digit number in your account matches the `NNN` portion of a name such as `proj-seatNNN`.
 
 > **Naming note:** In many workshops, your project name includes your username or student number. Use the exact project name shown in the event instructions.
 
-5. Open the project by clicking on its name.
-![Project Screen](image-7.png)
+5. Open the project by clicking its name.
+
+   ![Microsoft Foundry project home page after opening the assigned project](image-7.png)
 
 > **Success criteria:** You can enter the project and see navigation items such as **Agents**, **Playgrounds**, **Models + endpoints**, and **Files**.
 
 ### Step 3 — Confirm The Model Deployment Exists
 
-1. Inside the project, open **Models + endpoints**. ![Models and Endpionts](image-8.png)
-2. Confirm at least one model deployment is available. ![List of models](image-9.png)
+1. Inside the project, open **Models + endpoints**. ![Foundry navigation showing the Models plus endpoints section](image-8.png)
+2. Confirm at least one model deployment is available. ![List of available model deployments in Foundry](image-9.png)
 
 
 > **Success criteria:** You can see at least one deployment in a healthy state such as **Succeeded**, **Ready**, or equivalent.
@@ -188,26 +190,29 @@ The workshop environment should already provide access to:
    ```text
    https://app.fabric.microsoft.com
    ```
-![Fabric Page First Login](image-10.png)
 
-2. If prompted, sign in with the same lab account, click "Submit". ![Fabric Page with Username](image-11.png)
-3. If you see thi smessage ![Fabric Sign Up Page](image-12.png) do not proceed through teh steps. Instead navigate to   
+   ![Microsoft Fabric sign-in or first-load page](image-10.png)
+
+2. If prompted, sign in with the same lab account and click **Submit**. ![Microsoft Fabric sign-in page showing the lab username](image-11.png)
+3. If you see this message, do not continue with the sign-up flow. ![Microsoft Fabric sign-up or welcome screen that should be skipped](image-12.png)
+   Instead, navigate to:
+
     ```text
    https://app.fabric.microsoft.com
    ``` 
-   again in the same browser session and you should land in the home page.   ![Fabric Home Page](image-13.png)
+   again in the same browser session. You should then land on the Fabric home page. ![Microsoft Fabric home page after successful sign-in](image-13.png)
 4. You may choose cancel to skip the tour.
-5. Open **Workspaces**. ![Workspaces](image-14.png)
-5. Locate the workspace assigned for the event. ![Workspace selection](image-15.png)
+5. Open **Workspaces**. ![Microsoft Fabric navigation with Workspaces highlighted](image-14.png)
+6. Locate the workspace assigned for the event. ![Workspace list showing the assigned workshop workspace](image-15.png)
 
-![Workspace View](image-16.png)
+   ![Inside the assigned Microsoft Fabric workspace with prepared items visible](image-16.png)
 
 > **Success criteria:** You can enter the workspace and see the prepared items.
 
 ### Step 5 — Confirm The Data Asset Is Visible
 
-1. Open the workshop Lakehouse, warehouse, semantic model, or other primary data asset.
-2. Confirm you can see the expected tables, views, or entities.
+1. Open the workshop Lakehouse. ![Lakehouse to select](image-17.png)
+2. Confirm you can see the expected tables, views, or entities. ![Expected Tables](image-18.png)
 3. Preview at least one table or item.
 
 > **Success criteria:** You can browse the data structure. Read access is enough for this step.
@@ -276,10 +281,15 @@ By the end of this lab, you should have:
 
 ### Step 2 — Open Your Assigned Project
 
-1. Look for **Projects**, **All projects**, or the main project list.
-2. Find the project assigned to you for the lab.
-3. Open the project.
-4. Pause for a moment and review the left navigation.
+
+If you see this project page you are already there and you can jump to the next step:  ![Foundry Start Page](image-19.png)
+
+If you see this screen ![Top Level Foundry Page](image-20.png)
+
+
+1. Find the project assigned to you for the lab in the list of resources, it will contain the 3 digits like your user account.
+2. Open the project.
+3. Pause for a moment and review the left navigation.
 
 You should be able to find areas such as:
 
@@ -288,13 +298,16 @@ You should be able to find areas such as:
 3. **Files**
 4. **Playgrounds**
 
+ ![Foundry Start Page](image-19.png)
+
+
 > **What success looks like:** You are inside your project and can move around the main sections.
 
 ### Step 3 — Confirm The Workshop Model Deployment
 
 1. In the left navigation, open **Models + endpoints**.
-2. Find the model deployment specified for the workshop.
-3. Confirm the deployment status is healthy.
+2. Find the model deployment specified for the workshop **gpt-4o**.
+3. Confirm the deployment status is **Succeeded**.
 4. If more than one deployment is listed, note the exact deployment name you should use.
 
 > **What success looks like:** You can identify the correct deployment for the rest of the lab.
@@ -305,13 +318,14 @@ You should be able to find areas such as:
 
 ### Step 4 — Open A Chat Playground
 
-1. Open the chat playground or equivalent testing area in Foundry.
-2. Choose the workshop model deployment.
+1. Open the chat playground area in Foundry. ![Overview Navigation](image-21.png)
+2. Choose **Chat Playground** ![Chat Playground](image-22.png)
+2. Choose the workshop model deployment. ![Choose gpt-4o](image-23.png)
 3. Wait until the test surface is ready for input.
 
 ### Step 5 — Ask A Baseline Question
 
-1. Enter one of the following prompts.
+1. Enter one of the following prompts. ![Enter Prompt](image-24.png)
 2. Submit it and read the answer carefully.
 3. Notice that the answer is still general because you have not created or grounded an agent yet.
 
