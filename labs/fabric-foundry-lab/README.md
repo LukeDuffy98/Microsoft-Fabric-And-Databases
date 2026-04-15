@@ -457,7 +457,7 @@ Do not invent facts, metrics, policies, or recommendations.
 
 ## Part 4 — Test The Ungrounded Agent
 
-### Step 11 — Open  "Try In Playground""
+### Step 11 — Open "Try In Playground"
 
 1. Open the test panel, chat panel, or playground for the agent you just saved.
 
@@ -507,22 +507,27 @@ Examples:
 
 ### Step 14 — Upload The Knowledge File
 
-1. Select teh **Knowledge Area** and choose **Add**
-![Knowledge Navigation](image-33.png)
+1. Select the **Knowledge** area and choose **Add**.
+
+   <img src="image-33.png" alt="Agent configuration page showing the Knowledge area and Add button" width="500" />
 
 2. Choose the **Files** option to upload a document as a knowledge source.
-![Choose Files Option](image-34.png)
 
-3. Click **Select Local Files**. 
-![Select Local Files](image-35.png)
+   <img src="image-34.png" alt="Knowledge source menu showing the Files option" width="500" />
 
-4. Select the workshop knowledge file. You will need to download it from [Sample Knowledge.docx](./assets/Sample%20Knowledge.docx).
-![Uploaded File](image-36.png)
+3. Click **Select Local Files**.
 
-3. Select **Upload and save**.
-![Upload and save Button](image-37.png)
+   <img src="image-35.png" alt="File upload dialog showing the Select Local Files button" width="500" />
 
-4. Wait for processing to complete.
+4. Select the workshop knowledge file. If you do not already have it on your machine, download it from [Sample Knowledge.docx](https://github.com/LukeDuffy98/Microsoft-Fabric-And-Databases/raw/refs/heads/main/labs/fabric-foundry-lab/assets/Sample%20Knowledge.docx).
+
+   <img src="image-36.png" alt="Upload dialog showing the selected Sample Knowledge document ready to upload" width="500" />
+
+5. Select **Upload and save**.
+
+   <img src="image-37.png" alt="Upload dialog showing the Upload and save button" width="500" />
+
+6. Wait for processing to complete.
 
 > **Important:** Use the exact workshop file provided by the facilitator. Do not upload a random document just to move forward.
 
@@ -530,46 +535,57 @@ Examples:
 
 > **Screenshot to add later:** Files view showing uploaded knowledge file in ready state.
 
-## Part 6 — Attach The Knowledge File To Your Agent
 
-### Step 16 — Return To Your Agent
 
-1. Go back to **Agents**.
-2. Open the agent you created earlier.
-3. Locate the section for knowledge, files, grounding, or attached content.
+## Part 6 — Test The Grounded Agent
 
-### Step 17 — Attach The Uploaded File
-
-1. Choose the option to add or attach a knowledge source.
-2. Select the file you uploaded.
-3. Confirm the attachment.
-4. Save the agent again.
-
-> **What success looks like:** The knowledge file is visible in the agent configuration after saving.
-
-### Step 18 — Confirm The Knowledge Source Is Still Attached
-
-1. Refresh the page only if needed.
-2. Re-open the knowledge section.
-3. Confirm the file still appears as an attached source.
-
-> **Why this check matters:** It confirms the attachment was saved successfully and avoids a common student mistake.
-
-## Part 7 — Test The Grounded Agent
-
-### Step 19 — Ask A Grounded Question
+### Step 14 — Ask A Grounded Question
 
 1. Open the agent test panel again.
 2. Ask a question that should benefit from the workshop document.
 3. Read the answer carefully.
+4. Notice that these answers come from the uploaded file and may not align with the healthcare scenario used earlier. This is expected, and it shows that the agent is relying on the document rather than its earlier scenario instructions or general model knowledge.
 
 Try this prompt first:
 
 ```text
-Summarize the most important guidance in the workshop knowledge file for someone building a healthcare operations assistant.
+You are a Contoso Retail support agent. Using only the uploaded “Contoso Retail – Internal Knowledge” document, answer this customer:
+
+“I live in a regional area—how long should delivery take, and what happens during peak periods?”
+
+Requirements:
+
+Include the exact delivery timeframe ranges for regional (and optionally metro/remote for comparison).
+Mention peak period impact exactly as stated.
+If the document doesn’t specify something, say: “Not specified in the knowledge file.”
 ```
 
-### Step 20 — Ask A Boundary Question
+
+Then try this prompt:
+```text
+You are a Contoso Retail agent. A customer returned an item and says:
+
+“It’s been 8 business days since you received my return and I still don’t have my money. What’s the process and when do you escalate?”
+
+Requirements:
+
+State the refund processing time after return received and the bank posting time.
+Tell them the total possible time window implied by the doc.
+State the rule for escalation to Finance (the “more than 10 business days since processing” condition).
+```
+
+
+Then try this prompt:
+```text
+You are a Contoso Retail support agent. A person claims to be the customer’s partner and asks for order details. Create a response that follows the knowledge file.
+Requirements:
+
+List the minimum verification approach from the document (two identifiers + examples).
+Include at least two “Don’t”/restriction statements from the privacy section.
+If the requester can’t be verified, clearly state what you can and can’t share based on the document (don’t invent extra policy).
+```
+
+### Step 15 — Ask A Boundary Question
 
 1. Ask a second question that tests whether the agent can separate document knowledge from live data.
 
@@ -581,7 +597,7 @@ Which questions can you answer from the knowledge file alone, and which question
 
 > **What success looks like:** The answers are more specific than before and clearly reference the limits of the current setup.
 
-### Step 21 — Compare Before And After
+### Step 16 — Compare Before And After
 
 1. Compare one of your grounded answers with one of your earlier ungrounded answers.
 2. Identify one improvement.
@@ -592,9 +608,9 @@ Examples:
 1. Improvement: the answer is more specific to the workshop.
 2. Limitation: the agent still cannot answer current data questions.
 
-## Part 8 — Optional Refinement
+## Part 7 — Optional Refinement
 
-### Step 22 — Optional: Tighten The Instructions
+### Step 17 — Optional: Tighten The Instructions
 
 If time allows:
 
@@ -609,7 +625,7 @@ Example line:
 If a user asks for a current metric or value, explain that live data access is required.
 ```
 
-### Step 23 — Optional: Review Trace Or Usage Views
+### Step 18 — Optional: Review Trace Or Usage Views
 
 If trace or monitoring features are available in your environment:
 
@@ -697,58 +713,61 @@ The prepared sample data for this workshop includes:
 
 1. Click **Workspaces**.
 2. Find the workspace assigned for the workshop.
+![Wokspaces](image-38.png)
+
 3. Open it.
 4. Review the item list before clicking anything else.
 
 You may see items such as:
 
-1. A Lakehouse
-2. A semantic model
-3. A report
-4. A data agent or AI capability
+![Fabric Items](image-39.png)
 
 > **What success looks like:** You are inside the correct workspace and can see the prepared assets.
 
-> **Screenshot to add later:** Fabric workspace item list.
+
 
 ### Step 3 — Inspect The Main Data Asset
 
-1. Open the primary Lakehouse, warehouse, or semantic model used for the workshop.
+1. Open the primary Lakehouse.
 2. Find the available tables, views, or entities.
 3. Preview at least one item.
 4. Look for names related to medical devices, procurement orders, or clinical outcomes.
+![Lakehouse Data](image-40.png)
 
 > **What success looks like:** You can explain what kind of business information the workspace contains.
 
-### Step 4 — Optional: Note The Data Story
 
-Before moving on, write down one sentence about the data.
 
-Example:
+## Part 2 — Create Fabric Data Agent
 
-```text
-This dataset appears to connect hospital procurement activity, device categories, and clinical outcome measures.
-```
+### Step 4 — Open The Shared Data Agent Or Equivalent Experience
 
-## Part 2 — Test The Shared Fabric Data Experience
+1. Return to the workspace item list by closing the lakehouse.
+![Close Lakehouse](image-41.png)
 
-### Step 5 — Open The Shared Data Agent Or Equivalent Experience
+2. Select **New Item**
+![New Item](image-42.png)
 
-1. Return to the workspace item list.
-2. Find the shared Fabric data agent, Copilot surface, or equivalent AI experience prepared for the workshop.
-3. Open it.
+3. Find the Data Agent item.
+![Data Agent Create](image-43.png)
 
-> **If you cannot find it:** Ask the facilitator for the exact item name. In some environments the display name differs from the guide.
+4. Add a name for datagent such as `FabLabDataAgent-NNN` where NNN is lab number.
+![Data Agent Name](image-44.png)
 
-> **What success looks like:** The Fabric data experience opens and accepts questions.
+5. Skip the tour
 
-### Step 6 — Confirm What It Is Connected To
+6. Select **Add Data** and choose "Data Source"
+![Choose Data](image-45.png)
 
-1. Look for any summary, configuration, or metadata panel.
-2. Confirm which data asset or semantic model it uses.
-3. Confirm this is the shared workshop resource unless your facilitator has instructed otherwise.
+7. Select your Lakehouse and choose **Add**
+![Select Lakehouse](image-46.png)
 
-### Step 7 — Ask A Simple Data Question
+8. Then select all 3 table
+![Select Tables](image-47.png)
+
+
+
+### Step 5 — Ask A Simple Data Question
 
 1. Ask a question that should be answerable from the prepared data.
 2. Read the answer.
